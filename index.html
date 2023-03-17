@@ -7,19 +7,29 @@
   <title>とんとんの日記</title>
 
   <style>
+
+    body {
+      background: #f0f8ff;
+    }
+
     h1 {
       font-size: 16px;
       border-bottom: 1px solid gray;
       padding-bottom: 18px;
     }
 
-    .line {
+    .diary {
       border-bottom: 1px solid gray;
       padding-bottom: 18px;
     }
 
     img {
-      transition: all;
+      opacity: 0.2;
+      transition: opacity 5s;
+    }
+
+    .changed {
+      opacity: 1;
     }
 
     ul {
@@ -34,6 +44,10 @@
       display: none;
     }
 
+    button {
+      cursor: pointer;
+    }
+
 
   </style>
 </head>
@@ -46,17 +60,17 @@
       <li class='diary' id="20230314">
         <p>20130314</p>
         <img src="img/20230314.jpg" alt="画像" width="280">
-        <p class="line">散髪の帰り餃子の王将に行ったら、調味料入れがこんなことになってた。みんな悪さするから。。</p>
+        <p>散髪の帰り餃子の王将に行ったら、調味料入れがこんなことになってた。みんな悪さするから。。</p>
       </li>
       <li  class="diary done" id="20230310">
         <p>20130310</p>
         <img src="img/20230310.jpg" alt="画像" width="280">
-        <p class="line">今日は朝から「むさしの森珈琲」で贅沢にモーニング。食べる前に写真撮るつもりだったが、忘れてた～(>_<)<br>もう、ふわふわのパンケーキ。</p>
+        <p>今日は朝から「むさしの森珈琲」で贅沢にモーニング。食べる前に写真撮るつもりだったが、忘れてた～(>_<)<br>もう、ふわふわのパンケーキ。</p>
       </li>
       <li class="diary done" id="20230307">
         <p>20130307</p>
         <img src="img/20230307.jpg" alt="画像" width="280">
-        <p class="line">今日は病院の帰りに行きつけのラーメン店で昼食がら。</p>
+        <p>今日は病院の帰りに行きつけのラーメン店で昼食がら。</p>
       </li>
     </ul>
 
