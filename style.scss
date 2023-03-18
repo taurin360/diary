@@ -1,0 +1,103 @@
+
+// common
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  // 薄いブルー
+  background: #f0f8ff;
+
+  header {
+    background: #b0c4de;
+    h1 {
+      font-size: 16px;
+      padding: 24px 0;
+    }
+    .sp-menu {
+      margin-left: auto;
+      #open {
+        font-size: 32px;
+        line-height: 64px;
+        cursor: pointer;
+      }
+    }
+
+    display: flex;
+    padding: 0 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid gray;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.80);
+    text-align: right;
+    padding: 64px;
+    // opacity: 0;
+    // pointer-events: none;
+
+    #close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    li {
+      margin-top: 8px;
+      border: 1px solid black;
+    }
+  }
+
+  main {
+    padding: 0 16px;
+
+    .diary {
+      border-bottom: 1px solid gray;
+      padding-bottom: 18px;
+    }
+    
+    img {
+      opacity: 0.2;
+      transition: opacity 5s;
+    }
+    
+    .changed {
+      opacity: 1;
+    }
+    
+    ul {
+      padding-left:0
+    }
+    
+    li {
+      list-style:none
+    }
+    
+    .done {
+      display: none;
+    }
+    
+    button {
+      cursor: pointer;
+    }
+  }
+
+}
+
+
+
+

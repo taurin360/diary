@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f0f8ff;
+}
+body header {
+  background: #b0c4de;
+  display: flex;
+  padding: 0 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid gray;
+}
+body header h1 {
+  font-size: 16px;
+  padding: 24px 0;
+}
+body header .sp-menu {
+  margin-left: auto;
+}
+body header .sp-menu #open {
+  font-size: 32px;
+  line-height: 64px;
+  cursor: pointer;
+}
+body .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: right;
+  padding: 64px;
+}
+body .overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+body .overlay ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+body .overlay li {
+  margin-top: 8px;
+  border: 1px solid black;
+}
+body main {
+  padding: 0 16px;
+}
+body main .diary {
+  border-bottom: 1px solid gray;
+  padding-bottom: 18px;
+}
+body main img {
+  opacity: 0.2;
+  transition: opacity 5s;
+}
+body main .changed {
+  opacity: 1;
+}
+body main ul {
+  padding-left: 0;
+}
+body main li {
+  list-style: none;
+}
+body main .done {
+  display: none;
+}
+body main button {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

@@ -4,59 +4,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
   <title>とんとんの日記</title>
-
-  <style>
-
-    body {
-      background: #f0f8ff;
-    }
-
-    h1 {
-      font-size: 16px;
-      border-bottom: 1px solid gray;
-      padding-bottom: 18px;
-    }
-
-    .diary {
-      border-bottom: 1px solid gray;
-      padding-bottom: 18px;
-    }
-
-    img {
-      opacity: 0.2;
-      transition: opacity 5s;
-    }
-
-    .changed {
-      opacity: 1;
-    }
-
-    ul {
-      padding-left:0
-    }
-
-    li {
-      list-style:none
-    }
-
-    .done {
-      display: none;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-
-  </style>
 </head>
 <body>
   <header>
     <h1>心にうつりゆくよしなし事をつづる日記です。</h1>
+    <div class="sp-menu">
+      <span class="material-icons" id="open">menu</span>
+    </div>
   </header>
+
+  <div class="overlay">
+    <span class="material-icons" id="close">close</span>
+    <span >あいうえお</span>
+    <nav>
+      <ul class="day-btn-all">
+        <li><button id="20230318">20230318</button></li>
+        <li><button id="20230314">20230314</button></li>
+        <li><button id="20230310">20230310</button></li>
+        <li><button id="20230307">20230307</button></li>
+      </ul>
+    </nav>
+  </div>
+
   <main>
     <ul>
+      <li class='diary' id="20230318">
+        <p>20130318</p>
+        <img src="img/20230318.jpg" alt="画像" width="280">
+        <p>実家から高菜が送られてきた。これで食卓が少し豊になる。(^_^)</p>
+      </li>
       <li class='diary' id="20230314">
         <p>20130314</p>
         <img src="img/20230314.jpg" alt="画像" width="280">
@@ -73,12 +52,11 @@
         <p>今日は病院の帰りに行きつけのラーメン店で昼食がら。</p>
       </li>
     </ul>
-
-    <ul class="day-btn-all">
+    <!-- <ul class="day-btn-all">
       <li><button id="20230314">20230314</button></li>
       <li><button id="20230310">20230310</button></li>
       <li><button id="20230307">20230307</button></li>
-    </ul>
+    </ul> -->
     <script src="js/diary.js"></script>
   </main>
 </body>
