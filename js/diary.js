@@ -40,7 +40,7 @@
   // 日付ボタンのクリックを待ち受ける
   document.querySelector('.day-btn-all').addEventListener('click', e => {
     // 押されたのがボタンの時
-    if (e.target.nodeName === 'BUTTON') {
+    if (e.target.nodeName === 'LI') {
       // 日付メニューを消す
       overlay.classList.remove('show');
       // ハンバーガーメニューボタンを表示する

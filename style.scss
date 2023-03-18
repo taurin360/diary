@@ -40,9 +40,8 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.80);
-    text-align: right;
-    // padding: 64px;
+    background: rgba(230, 230, 250, 1.00);
+    text-align: left;
     padding: 64px 8px;
     opacity: 0;
     pointer-events: none;
@@ -62,9 +61,7 @@ body {
       padding: 0;
       li {
         margin-top: 8px;
-        button {
-          cursor: pointer;
-        }
+        cursor: pointer;
       }
     }
   }
@@ -83,7 +80,7 @@ body {
 
     img {
       opacity: 0.2;
-      transition: opacity 5s;
+      // transition: opacity 2s;
     }
     
     .changed {

@@ -34,8 +34,8 @@ body .overlay {
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.8);
-  text-align: right;
+  background: rgb(230, 230, 250);
+  text-align: leftright;
   padding: 64px 8px;
   opacity: 0;
   pointer-events: none;
@@ -55,8 +55,6 @@ body .overlay ul {
 }
 body .overlay ul li {
   margin-top: 8px;
-}
-body .overlay ul li button {
   cursor: pointer;
 }
 body .overlay.show {
@@ -71,7 +69,6 @@ body main p {
 }
 body main img {
   opacity: 0.2;
-  transition: opacity 5s;
 }
 body main .changed {
   opacity: 1;
