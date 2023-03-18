@@ -7,7 +7,7 @@ body {
   background: #f0f8ff;
 }
 body header {
-  background: #b0c4de;
+  background: #e6e6fa;
   display: flex;
   padding: 0 16px;
   padding-bottom: 18px;
@@ -25,6 +25,9 @@ body header .sp-menu #open {
   line-height: 64px;
   cursor: pointer;
 }
+body header .sp-menu #open.hide {
+  display: none;
+}
 body .overlay {
   position: fixed;
   top: 0;
@@ -33,7 +36,10 @@ body .overlay {
   left: 0;
   background: rgba(255, 255, 255, 0.8);
   text-align: right;
-  padding: 64px;
+  padding: 64px 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s;
 }
 body .overlay #close {
   position: absolute;
@@ -47,16 +53,21 @@ body .overlay ul {
   margin: 0;
   padding: 0;
 }
-body .overlay li {
+body .overlay ul li {
   margin-top: 8px;
-  border: 1px solid black;
+}
+body .overlay ul li button {
+  cursor: pointer;
+}
+body .overlay.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 body main {
   padding: 0 16px;
 }
-body main .diary {
-  border-bottom: 1px solid gray;
-  padding-bottom: 18px;
+body main p {
+  line-height: 30px;
 }
 body main img {
   opacity: 0.2;
@@ -73,8 +84,5 @@ body main li {
 }
 body main .done {
   display: none;
-}
-body main button {
-  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

@@ -10,7 +10,7 @@ body {
   background: #f0f8ff;
 
   header {
-    background: #b0c4de;
+    background: #e6e6fa;
     h1 {
       font-size: 16px;
       padding: 24px 0;
@@ -21,6 +21,10 @@ body {
         font-size: 32px;
         line-height: 64px;
         cursor: pointer;
+      }
+
+      #open.hide {
+        display: none;
       }
     }
 
@@ -38,9 +42,11 @@ body {
     left: 0;
     background: rgba(255, 255, 255, 0.80);
     text-align: right;
-    padding: 64px;
-    // opacity: 0;
-    // pointer-events: none;
+    // padding: 64px;
+    padding: 64px 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
 
     #close {
       position: absolute;
@@ -54,22 +60,27 @@ body {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      li {
+        margin-top: 8px;
+        button {
+          cursor: pointer;
+        }
+      }
     }
-    
-    li {
-      margin-top: 8px;
-      border: 1px solid black;
-    }
+  }
+
+  .overlay.show {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   main {
     padding: 0 16px;
-
-    .diary {
-      border-bottom: 1px solid gray;
-      padding-bottom: 18px;
-    }
     
+    p {
+      line-height: 30px;
+    }
+
     img {
       opacity: 0.2;
       transition: opacity 5s;
@@ -91,11 +102,7 @@ body {
       display: none;
     }
     
-    button {
-      cursor: pointer;
-    }
   }
-
 }
 
 

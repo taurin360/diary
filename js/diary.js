@@ -3,7 +3,27 @@
 { 
   // 初回表示のインデックスは0番目
   let img_index = 0;  
+  const open = document.getElementById('open');
+  const close = document.getElementById('close');
+  const overlay = document.querySelector('.overlay');
 
+  // ハンバーガーメニューボタンのクリックを待ち受ける
+  open.addEventListener('click', () => {
+    // 日付メニューを前面に表示
+    overlay.classList.add('show');
+    // ハンバーガーメニューボタンを非表示に
+    open.classList.add('hide');
+  });
+
+  // クローズメニューボタンのクリックを待ち受ける
+  close.addEventListener('click', () => {
+    // 日付メニューを消す
+    overlay.classList.remove('show');
+    // ハンバーガーメニューボタンを表示する
+    open.classList.remove('hide');
+  });
+
+  // タイマのコールバック関数 日記画面表示0.1秒後に実施
   let imgchange = function() {
     document.querySelectorAll('img').forEach((img_diary, index) => {
       if (img_index === index) {
@@ -21,6 +41,10 @@
   document.querySelector('.day-btn-all').addEventListener('click', e => {
     // 押されたのがボタンの時
     if (e.target.nodeName === 'BUTTON') {
+      // 日付メニューを消す
+      overlay.classList.remove('show');
+      // ハンバーガーメニューボタンを表示する
+      open.classList.remove('hide');
       // 日記画面をサーチ
       document.querySelectorAll('.diary').forEach((diary, index) => {
         // 押されたボタンの日記画面なら
