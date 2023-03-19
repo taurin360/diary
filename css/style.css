@@ -11,11 +11,11 @@ body header {
   display: flex;
   padding: 0 16px;
   padding-bottom: 18px;
-  border-bottom: 1px solid gray;
 }
 body header h1 {
   font-size: 16px;
   padding: 24px 0;
+  margin: 0 auto;
 }
 body header .sp-menu {
   margin-left: auto;
@@ -25,9 +25,6 @@ body header .sp-menu #open {
   line-height: 64px;
   cursor: pointer;
 }
-body header .sp-menu #open.hide {
-  display: none;
-}
 body .overlay {
   position: fixed;
   top: 0;
@@ -35,7 +32,7 @@ body .overlay {
   right: 0;
   left: 0;
   background: rgb(230, 230, 250);
-  text-align: leftright;
+  text-align: left;
   padding: 64px 8px;
   opacity: 0;
   pointer-events: none;
@@ -54,8 +51,11 @@ body .overlay ul {
   padding: 0;
 }
 body .overlay ul li {
-  margin-top: 8px;
+  margin-top: 24px;
   cursor: pointer;
+}
+body .overlay ul li:hover {
+  color: #b0c4de;
 }
 body .overlay.show {
   opacity: 1;
@@ -69,6 +69,7 @@ body main p {
 }
 body main img {
   opacity: 0.2;
+  transition: opacity 2s;
 }
 body main .changed {
   opacity: 1;

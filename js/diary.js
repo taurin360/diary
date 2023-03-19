@@ -7,21 +7,23 @@
   const close = document.getElementById('close');
   const overlay = document.querySelector('.overlay');
 
-  // ハンバーガーメニューボタンのクリックを待ち受ける
-  open.addEventListener('click', () => {
+    // ハンバーガーメニュークリック時の動作
+  let showHmenu = function() {
     // 日付メニューを前面に表示
     overlay.classList.add('show');
-    // ハンバーガーメニューボタンを非表示に
-    open.classList.add('hide');
-  });
+  }
 
   // クローズメニューボタンのクリックを待ち受ける
   close.addEventListener('click', () => {
     // 日付メニューを消す
     overlay.classList.remove('show');
-    // ハンバーガーメニューボタンを表示する
-    open.classList.remove('hide');
   });
+
+  // トランジション動作が完全に終わってから
+  let opendisp = function() {
+    // ハンバーガーメニューボタンのクリックを待ち受ける
+    open.addEventListener('click', showHmenu);
+  }
 
   // タイマのコールバック関数 日記画面表示0.1秒後に実施
   let imgchange = function() {
@@ -29,6 +31,8 @@
       if (img_index === index) {
         // 表示する日記画像を透過無しにする(CSSの設定で透過無し完了まで2秒かける)
         img_diary.classList.add('changed');
+        // トランジション動作が完全に終わるまで待つ
+        setTimeout(opendisp, 2000);
       }
       else {
         // 表示画像以外は透過ありにする
@@ -43,8 +47,8 @@
     if (e.target.nodeName === 'LI') {
       // 日付メニューを消す
       overlay.classList.remove('show');
-      // ハンバーガーメニューボタンを表示する
-      open.classList.remove('hide');
+      // ハンバーガーメニューボタンを非表示にする
+      open.classList.add('hide');
       // 日記画面をサーチ
       document.querySelectorAll('.diary').forEach((diary, index) => {
         // 押されたボタンの日記画面なら
@@ -53,6 +57,8 @@
           img_index = index;
           // 日記画面を表示する
           diary.classList.remove('done');
+          // ハンバーガーメニューボタンのクリックを待ち受けを一旦停止
+          open.removeEventListener('click', showHmenu);
           //  0.1秒後に透過無し画像にする
           setTimeout(imgchange, 100);
         }
