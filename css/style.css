@@ -8,9 +8,14 @@ body {
 }
 body header {
   background: #e6e6fa;
+}
+body header .hedContents {
   display: flex;
   padding: 0 16px;
   padding-bottom: 18px;
+}
+body header .hedContents.done {
+  display: none;
 }
 body header h1 {
   font-size: 16px;
@@ -33,10 +38,9 @@ body .overlay {
   left: 0;
   background: rgb(230, 230, 250);
   text-align: left;
-  padding: 64px 8px;
+  padding: 32px 8px 512px 8px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.6s;
 }
 body .overlay #close {
   position: absolute;
@@ -58,6 +62,7 @@ body .overlay ul li:hover {
   color: #b0c4de;
 }
 body .overlay.show {
+  position: static;
   opacity: 1;
   pointer-events: auto;
 }
