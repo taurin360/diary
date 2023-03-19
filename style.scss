@@ -14,7 +14,7 @@ body {
     background: #e6e6fa;
 
     .hedContents {
-      display: flex;
+      // display: flex;
       padding: 0 16px;
       padding-bottom: 18px;
     }
@@ -25,14 +25,17 @@ body {
 
     h1 {
       font-size: 16px;
-      padding: 24px 0;
-      margin: 0 auto;
+      padding: 16px 0 0 0;
+      text-align: center;
     }
     .sp-menu {
       margin-left: auto;
       #open {
+        position: fixed;
+        top: 8px;
+        bottom: 0px;
+        right: 16px;
         font-size: 32px;
-        line-height: 64px;
         cursor: pointer;
       }
     }
@@ -41,20 +44,19 @@ body {
   // ハンバーガーメニュー表示
   .overlay {
     position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(230, 230, 250, 1.00);
+    top: 8px;
+    bottom: 0px;
+    right: 16px;
+    background: #e6e6fa;
     text-align: left;
-    padding: 32px 8px 512px 8px;
+    padding: 32px 8px 520px 8px;
     opacity: 0;
     pointer-events: none;
 
     #close {
       position: absolute;
-      top: 16px;
-      right: 16px;
+      top: 8px;
+      right: 8px;
       font-size: 32px;
       cursor: pointer;
     }
