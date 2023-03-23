@@ -97,11 +97,6 @@
     }
   });
 
-  document.querySelector('.diary').addEventListener('touchmove', e => {
-    //
-    open.textContent = 'thumb_up';
-  });
-
   // 日付IDを先頭日記画面のIDで初期化
   diaryId = document.querySelector('.diary').getAttribute('id');
   // IMG画像のときのみ透過、ハンバーガーメニューボタン消去を行う
