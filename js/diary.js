@@ -18,9 +18,19 @@
     // 現在表示している日記画面を非表示とする
     const diary = document.querySelectorAll('.diary');
     diary[disp_index].classList.add('done');
-    // 表示画像を透過ありに戻す
-    diary[disp_index].children[1].classList.remove('changed');
-    // document.querySelectorAll('img')[disp_index].classList.remove('changed');
+    // IMG画像のとき
+    if (diary[disp_index].children[1].nodeName === 'IMG') {
+      // 表示画像を透過ありに戻す
+      diary[disp_index].children[1].classList.remove('changed');
+    }
+    // 日記画面が2画面
+    if (diary[disp_index].childElementCount === 5) {
+      // IMG画像のとき
+      if (diary[disp_index].children[3].nodeName === 'IMG') {
+        // 表示画像を透過ありに戻す
+        diary[disp_index].children[3].classList.remove('changed');
+      }
+    }
   }
   // ハンバーガーメニューボタンのクリックを待ち受ける
   open.addEventListener('click', showHmenu);
@@ -79,8 +89,8 @@
           diary.classList.remove('done');
           // ヘッダ部分を表示する
           hedContents.classList.remove('done');
-          // 日記画面が１画面
-          if (diary.childElementCount <= 3) {
+          // 日記画面が1画面
+          if (diary.childElementCount === 3) {
             // IMG画像のとき
             if (diary.children[1].nodeName === 'IMG') {
               // トランジション動作が終わるまでハンバーガーメニューボタン非表示[初回表示用]
@@ -88,8 +98,8 @@
               // 一旦透過画像表示し、0.1秒後に透過無し画像にする[初回表示用]
               setTimeout(imgchange, 100);
             }
-          // 日記画面が２画面
-          } else if (diary.childElementCount <= 5) {
+          // 日記画面が2画面
+          } else if (diary.childElementCount === 5) {
             // IMG画像が含まれるとき
             if (diary.children[1].nodeName === 'IMG' || diary.children[3].nodeName === 'IMG') {
               // トランジション動作が終わるまでハンバーガーメニューボタン非表示[初回表示用]
@@ -113,8 +123,8 @@
   let diary = document.querySelector('.diary');
   // 日付IDを先頭日記画面のIDで初期化
   diaryId = diary.getAttribute('id');
-  // 日記画面が１画面
-  if (diary.childElementCount <= 3) {
+  // 日記画面が1画面
+  if (diary.childElementCount === 3) {
     // IMG画像のとき
     if (diary.children[1].nodeName === 'IMG') {
       // トランジション動作が終わるまでハンバーガーメニューボタン非表示[初回表示用]
@@ -122,8 +132,8 @@
       // 一旦透過画像表示し、0.1秒後に透過無し画像にする[初回表示用]
       setTimeout(imgchange, 100);
     }
-  // 日記画面が２画面
-  } else if (diary.childElementCount <= 5) {
+  // 日記画面が2画面
+  } else if (diary.childElementCount === 5) {
     // IMG画像が含まれるとき
     if (diary.children[1].nodeName === 'IMG' || diary.children[3].nodeName === 'IMG') {
       // トランジション動作が終わるまでハンバーガーメニューボタン非表示[初回表示用]
