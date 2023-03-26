@@ -96,6 +96,9 @@ body .overlay.show li:nth-child(7) {
 body .overlay.show li:nth-child(8) {
   transition-delay: 0.8s;
 }
+body .overlay.show li:nth-child(9) {
+  transition-delay: 0.9s;
+}
 body main {
   padding: 0 16px;
 }
