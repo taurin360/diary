@@ -6,15 +6,14 @@
 }
 
 body {
-  // 薄いブルー
-  background: #f0f8ff;
+    // 薄いブルー
+    background: #f0f8ff;
 
   // ヘッダー
   header {
     background: #e6e6fa;
 
     .hedContents {
-      // display: flex;
       padding: 0 16px;
       padding-bottom: 18px;
     }
@@ -36,6 +35,34 @@ body {
         bottom: 0px;
         right: 16px;
         font-size: 32px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  main {
+
+    .diary p {
+      padding: 16px 0;
+    }
+  }
+
+  footer {
+    .container {
+      padding: 10px 0 40px 0;
+      height: 32px;
+      background: #d3d3d3;
+      display: flex;
+      justify-content: space-between;
+      .gb-btn {
+        padding: 0 0 0 32px;
+      }
+      p {
+        margin: 0 auto;
+        font-size: 24px;
+      }
+      span {
+        padding: 0 16px 0 0;
         cursor: pointer;
       }
     }
@@ -111,6 +138,9 @@ body {
   }
   .overlay.show li:nth-child(9) {
     transition-delay: .9s;
+  }
+  .overlay.show li:nth-child(10) {
+    transition-delay: 1.0s;
   }
 
   // 日記画像と文章

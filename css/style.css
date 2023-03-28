@@ -32,6 +32,27 @@ body header .sp-menu #open {
   font-size: 32px;
   cursor: pointer;
 }
+body main .diary p {
+  padding: 16px 0;
+}
+body footer .container {
+  padding: 10px 0 40px 0;
+  height: 32px;
+  background: #d3d3d3;
+  display: flex;
+  justify-content: space-between;
+}
+body footer .container .gb-btn {
+  padding: 0 0 0 32px;
+}
+body footer .container p {
+  margin: 0 auto;
+  font-size: 24px;
+}
+body footer .container span {
+  padding: 0 16px 0 0;
+  cursor: pointer;
+}
 body .overlay {
   position: fixed;
   top: 8px;
@@ -98,6 +119,9 @@ body .overlay.show li:nth-child(8) {
 }
 body .overlay.show li:nth-child(9) {
   transition-delay: 0.9s;
+}
+body .overlay.show li:nth-child(10) {
+  transition-delay: 1s;
 }
 body main {
   padding: 0 16px;
