@@ -7,6 +7,7 @@
   let timerId;
   // タイマ停止中で初期化
   let gbExe = 0;
+  let regbMsg;
   const open = document.getElementById('open');
   const close = document.getElementById('close');
   const hedContents = document.querySelector('.hedContents');
@@ -14,6 +15,7 @@
   const good = document.querySelector('.good');
   const bad = document.querySelector('.bad');
   const gbmsg = document.querySelector('.gb-msg');
+  const container = document.querySelector('.container');
   
     // ハンバーガーメニュークリック時の動作
   let showHmenu = function() {
@@ -28,6 +30,8 @@
     // 現在表示している日記画面を非表示とする
     const diary = document.querySelectorAll('.diary');
     diary[disp_index].classList.add('done');
+    // いいね。よくないね。を非表示
+    container.classList.add('done');
     // IMG画像のとき
     if (diary[disp_index].children[1].nodeName === 'IMG') {
       // 表示画像を透過ありに戻す
@@ -64,6 +68,8 @@
     // 日記画面を表示とする
     const diary = document.querySelectorAll('.diary');
     diary[disp_index].classList.remove('done');
+    // いいね。よくないね。を非示
+    container.classList.remove('done');
     // 日記画面が1画面
     if (diary[disp_index].childElementCount === 3) {
       // IMG画像のとき
@@ -125,6 +131,8 @@
           diary.classList.remove('done');
           // ヘッダ部分を表示する
           hedContents.classList.remove('done');
+          // いいね。よくないね。を非示
+          container.classList.remove('done');
           // 日記画面が1画面
           if (diary.childElementCount === 3) {
             // IMG画像のとき
@@ -172,6 +180,10 @@
       gbmsg.textContent = 'ありがとう！';
       // 表示時間
       timerId = setTimeout(msgErase, 4000);
+    } else {
+      // メッセージを上書き
+      regbMsg = gbmsg.textContent;
+      gbmsg.textContent = regbMsg;
     }
   });
 
@@ -185,10 +197,12 @@
       gbmsg.textContent = 'なんだとぉ！';
       // 表示時間
       timerId = setTimeout(msgErase, 4000);
+    } else {
+      // メッセージを上書き
+      regbMsg = gbmsg.textContent;
+      gbmsg.textContent = regbMsg;
     }
   });
-
-
 
   // 先頭日付画面
   let diary = document.querySelector('.diary');

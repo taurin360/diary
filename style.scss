@@ -47,27 +47,6 @@ body {
     }
   }
 
-  footer {
-    .container {
-      padding: 10px 0 40px 0;
-      height: 32px;
-      background: #d3d3d3;
-      display: flex;
-      justify-content: space-between;
-      .gb-btn {
-        padding: 0 0 0 32px;
-      }
-      p {
-        margin: 0 auto;
-        font-size: 24px;
-      }
-      span {
-        padding: 0 16px 0 0;
-        cursor: pointer;
-      }
-    }
-  }
-
   // ハンバーガーメニュー表示
   .overlay {
     position: fixed;
@@ -173,5 +152,30 @@ body {
     }
     
   }
+
+  footer {
+    .container {
+      padding: 80px 0 40px 0;
+      height: 32px;
+      // background: #d3d3d3;
+      display: flex;
+      justify-content: space-between;
+      .gb-btn {
+        padding: 0 0 0 32px;
+      }
+      p {
+        margin: 0 auto;
+        font-size: 24px;
+      }
+      span {
+        padding: 0 16px 0 0;
+        cursor: pointer;
+      }
+    }
+    .done {
+      display: none;
+    }
+  }
+
 }
 
