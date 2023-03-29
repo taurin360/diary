@@ -52,27 +52,21 @@ body main .done {
   display: none;
 }
 body footer {
-  padding: 40px 0 40px 0;
+  padding: 16px 0 40px 0;
   height: 32px;
 }
-body footer .count {
+body footer .g-btn {
   display: flex;
-  padding: 0 0 0 32px;
-  gap: 24px 32px;
 }
-body footer .container {
+body footer .g-btn span {
+  padding: 0 16px 0 16px;
+  cursor: pointer;
+}
+body footer .b-btn {
   display: flex;
-  justify-content: space-between;
 }
-body footer .container .gb-btn {
-  padding: 0 0 0 32px;
-}
-body footer .container p {
-  margin: 0 auto;
-  font-size: 24px;
-}
-body footer .container span {
-  padding: 0 16px 0 0;
+body footer .b-btn span {
+  padding: 0 16px 0 16px;
   cursor: pointer;
 }
 body footer .done {
@@ -83,9 +77,9 @@ body .overlay {
   top: 8px;
   bottom: 0px;
   right: 16px;
-  background: #e6e6fa;
+  background: #f0f8ff;
   text-align: left;
-  padding: 32px 8px 520px 8px;
+  padding: 32px 8px 80px 8px;
   opacity: 0;
   pointer-events: none;
 }

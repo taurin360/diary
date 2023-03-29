@@ -79,25 +79,19 @@ body {
   }
 
   footer {
-    padding: 40px 0 40px 0;
+    padding: 16px 0 40px 0;
     height: 32px;
-    .count {
+    .g-btn {
       display: flex;
-      padding: 0 0 0 32px;
-      gap: 24px 32px;
-    }
-    .container {
-      display: flex;
-      justify-content: space-between;
-      .gb-btn {
-        padding: 0 0 0 32px;
-      }
-      p {
-        margin: 0 auto;
-        font-size: 24px;
-      }
       span {
-        padding: 0 16px 0 0;
+        padding: 0 16px 0 16px;
+        cursor: pointer;
+      }
+    }
+    .b-btn {
+      display: flex;
+      span {
+        padding: 0 16px 0 16px;
         cursor: pointer;
       }
     }
@@ -112,9 +106,9 @@ body {
     top: 8px;
     bottom: 0px;
     right: 16px;
-    background: #e6e6fa;
+    background: #f0f8ff;
     text-align: left;
-    padding: 32px 8px 520px 8px;
+    padding: 32px 8px 80px 8px;
     opacity: 0;
     pointer-events: none;
 
@@ -154,33 +148,6 @@ body {
   
   // .overlay.show li:nth-child(1) {
   //   transition-delay: .1s;
-  // }
-  // .overlay.show li:nth-child(2) {
-  //   transition-delay: .2s;
-  // }
-  // .overlay.show li:nth-child(3) {
-  //   transition-delay: .3s;
-  // }
-  // .overlay.show li:nth-child(4) {
-  //   transition-delay: .4s;
-  // }
-  // .overlay.show li:nth-child(5) {
-  //   transition-delay: .5s;
-  // }
-  // .overlay.show li:nth-child(6) {
-  //   transition-delay: .6s;
-  // }
-  // .overlay.show li:nth-child(7) {
-  //   transition-delay: .7s;
-  // }
-  // .overlay.show li:nth-child(8) {
-  //   transition-delay: .8s;
-  // }
-  // .overlay.show li:nth-child(9) {
-  //   transition-delay: .9s;
-  // }
-  // .overlay.show li:nth-child(10) {
-  //   transition-delay: 1.0s;
   // }
 }
 

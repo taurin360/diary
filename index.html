@@ -41,7 +41,7 @@
   </div>
 
   <main>
-    <ul>
+    <ul class="diary-all">
       <li class='diary' id="20230328">
         <p>20230328</p>
         <video controls class="20230328" src="img/20230328.mp4" alt="20230328" width="280"></video>
@@ -97,17 +97,20 @@
     </ul>
   </main>
   <footer>
-    <div class="count">
-      <p class="g-cnt">0</p>
-      <p class="b-cnt">0</p>
-    </div>
     <div class="container">
-      <div class="gb-btn">
+      <div class="g-btn">
         <span class="material-icons good">thumb_up</span>
+        <p>いいね。　　カウント数：　</p>
+        <p class="g-cnt">0</p>
+      </div>
+      <div class="b-btn">
         <span class="material-icons bad">thumb_down</span>
+        <p>よくないね。カウント数：　</p>
+        <p class="b-cnt">0</p>
       </div>
     </div>
   </footer>
+
   <script src="js/diary.js"></script>
 
 </body>
