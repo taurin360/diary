@@ -14,10 +14,21 @@ body {
     background: #e6e6fa;
 
     .hedContents {
-      padding: 0 16px;
+      padding: 0 8px;
       padding-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        margin: 0 auto;
+      }
+      .sp-menu {
+        #open {
+          padding-top: 4px;
+          font-size: 32px;
+          cursor: pointer;
+        }
+      }
     }
-
     .hedContents.done {
       display: none;
     }
@@ -27,23 +38,71 @@ body {
       padding: 16px 0 0 0;
       text-align: center;
     }
-    .sp-menu {
-      margin-left: auto;
-      #open {
-        position: fixed;
-        top: 8px;
-        bottom: 0px;
-        right: 16px;
-        font-size: 32px;
+  }
+
+  // 日記画像と文章
+  main {
+    padding: 0 16px;
+
+    .diary {
+      border-bottom: 1px solid #000;
+      padding-bottom: 48px;
+
+      p {
+        padding: 16px 0;
+        line-height: 30px;
+      }
+
+    }
+
+    // img {
+    //   opacity: 0.2;
+    //   transition: opacity 2s;
+    // }
+
+    // .changed {
+    //   opacity: 1;
+    // }
+    
+    ul {
+      padding-left:0
+    }
+    
+    li {
+      list-style:none
+    }
+    
+    .done {
+      display: none;
+    }
+    
+  }
+
+  footer {
+    padding: 40px 0 40px 0;
+    height: 32px;
+    .count {
+      display: flex;
+      padding: 0 0 0 32px;
+      gap: 24px 32px;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      .gb-btn {
+        padding: 0 0 0 32px;
+      }
+      p {
+        margin: 0 auto;
+        font-size: 24px;
+      }
+      span {
+        padding: 0 16px 0 0;
         cursor: pointer;
       }
     }
-  }
-
-  main {
-
-    .diary p {
-      padding: 16px 0;
+    .done {
+      display: none;
     }
   }
 
@@ -90,92 +149,38 @@ body {
   }
   .overlay.show li {
     transform: none;
-  }
-  .overlay.show li:nth-child(1) {
-    transition-delay: .1s;
-  }
-  .overlay.show li:nth-child(2) {
     transition-delay: .2s;
   }
-  .overlay.show li:nth-child(3) {
-    transition-delay: .3s;
-  }
-  .overlay.show li:nth-child(4) {
-    transition-delay: .4s;
-  }
-  .overlay.show li:nth-child(5) {
-    transition-delay: .5s;
-  }
-  .overlay.show li:nth-child(6) {
-    transition-delay: .6s;
-  }
-  .overlay.show li:nth-child(7) {
-    transition-delay: .7s;
-  }
-  .overlay.show li:nth-child(8) {
-    transition-delay: .8s;
-  }
-  .overlay.show li:nth-child(9) {
-    transition-delay: .9s;
-  }
-  .overlay.show li:nth-child(10) {
-    transition-delay: 1.0s;
-  }
-
-  // 日記画像と文章
-  main {
-    padding: 0 16px;
-    
-    p {
-      line-height: 30px;
-    }
-
-    img {
-      opacity: 0.2;
-      transition: opacity 2s;
-    }
-
-    .changed {
-      opacity: 1;
-    }
-    
-    ul {
-      padding-left:0
-    }
-    
-    li {
-      list-style:none
-    }
-    
-    .done {
-      display: none;
-    }
-    
-  }
-
-  footer {
-    .container {
-      padding: 80px 0 40px 0;
-      height: 32px;
-      // background: #d3d3d3;
-      display: flex;
-      justify-content: space-between;
-      .gb-btn {
-        padding: 0 0 0 32px;
-      }
-      p {
-        margin: 0 auto;
-        font-size: 24px;
-      }
-      span {
-        padding: 0 16px 0 0;
-        cursor: pointer;
-      }
-    }
-    .done {
-      display: none;
-    }
-  }
-
+  
+  // .overlay.show li:nth-child(1) {
+  //   transition-delay: .1s;
+  // }
+  // .overlay.show li:nth-child(2) {
+  //   transition-delay: .2s;
+  // }
+  // .overlay.show li:nth-child(3) {
+  //   transition-delay: .3s;
+  // }
+  // .overlay.show li:nth-child(4) {
+  //   transition-delay: .4s;
+  // }
+  // .overlay.show li:nth-child(5) {
+  //   transition-delay: .5s;
+  // }
+  // .overlay.show li:nth-child(6) {
+  //   transition-delay: .6s;
+  // }
+  // .overlay.show li:nth-child(7) {
+  //   transition-delay: .7s;
+  // }
+  // .overlay.show li:nth-child(8) {
+  //   transition-delay: .8s;
+  // }
+  // .overlay.show li:nth-child(9) {
+  //   transition-delay: .9s;
+  // }
+  // .overlay.show li:nth-child(10) {
+  //   transition-delay: 1.0s;
+  // }
 }
 
