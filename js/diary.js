@@ -13,6 +13,7 @@
   const bad = document.querySelector('.bad');
   const container = document.querySelector('.container');
   const gCounter = document.querySelector('.g-cnt');
+  const bCounter = document.querySelector('.b-cnt');
   
   // ハンバーガーメニュークリック時の動作
   let showHmenu = function() {
@@ -96,7 +97,7 @@
   });
 
   // いいね数初期化
-  for (let i = 0;  i < 10; i++) {
+  for (let i = 0;  i < 11; i++) {
     gnum[i] = 0;
   }
   // いいね音声のインスタンス作成
@@ -116,6 +117,8 @@
 
     // よくないねボタンのクリックを待ち受ける
   bad.addEventListener('click', () => {
+    // いいね。カウント数表示
+    bCounter.textContent = '0';
     // よくないね音声を頭から再生
     good_audio.pause();
     bad_audio.currentTime = 0;
