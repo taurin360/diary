@@ -118,11 +118,19 @@
     // よくないねボタンのクリックを待ち受ける
   bad.addEventListener('click', () => {
     // いいね。カウント数表示
-    bCounter.textContent = '0';
+    bCounter.textContent = '1';
     // よくないね音声を頭から再生
     good_audio.pause();
     bad_audio.currentTime = 0;
     bad_audio.play();
+    // 0.1秒後に0に戻す
+    setTimeout(bcntRev, 100);
   });
+
+  let bcntRev = function(){
+    // いいね。カウント数表示
+    bCounter.textContent = '0';
+  };
+  
 
 }
