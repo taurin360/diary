@@ -6,8 +6,8 @@
 }
 
 body {
-    // 薄いブルー
-    background: #f0f8ff;
+  // 薄いブルー
+  background: #f0f8ff;
 
   // ヘッダー
   header {
@@ -40,6 +40,49 @@ body {
     }
   }
 
+  // ハンバーガーメニュー表示
+  .overlay {
+    text-align: left;
+    padding: 32px 8px 8px 8px;
+    #close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-top: 24px;
+        cursor: pointer;
+        animation-name: fadeInAnime;
+        animation-duration:3s;
+        animation-fill-mode:forwards;
+        opacity: 0;
+      }
+      @keyframes fadeInAnime{
+        0% {
+          opacity: 0;
+        }
+      
+        100% {
+          opacity: 1;
+        }
+      }
+      li:hover {
+        color: #b0c4de;
+      }
+    }
+  }
+
+  .overlay.done {
+    display: none;
+  }
+
   // 日記画像と文章
   main {
     padding: 0 16px;
@@ -55,15 +98,6 @@ body {
 
     }
 
-    // img {
-    //   opacity: 0.2;
-    //   transition: opacity 2s;
-    // }
-
-    // .changed {
-    //   opacity: 1;
-    // }
-    
     ul {
       padding-left:0
     }
@@ -75,79 +109,36 @@ body {
     .done {
       display: none;
     }
-    
+  
+    // いいね/よくないねボタン
+    .container {
+      padding: 16px 0 40px 0;
+      height: 32px;
+      .g-btn {
+        display: flex;
+        span {
+          padding: 0 16px 0 16px;
+          cursor: pointer;
+        }
+      }
+      .b-btn {
+        display: flex;
+        span {
+          padding: 0 16px 0 16px;
+          cursor: pointer;
+        }
+      }
+      .done {
+        display: none;
+      }
+    }
   }
 
   footer {
-    padding: 16px 0 40px 0;
-    height: 32px;
-    .g-btn {
-      display: flex;
-      span {
-        padding: 0 16px 0 16px;
-        cursor: pointer;
-      }
-    }
-    .b-btn {
-      display: flex;
-      span {
-        padding: 0 16px 0 16px;
-        cursor: pointer;
-      }
-    }
-    .done {
-      display: none;
+    .history {
+      padding: 0 0 0 40px;
     }
   }
 
-  // ハンバーガーメニュー表示
-  .overlay {
-    position: fixed;
-    top: 8px;
-    bottom: 0px;
-    right: 16px;
-    background: #f0f8ff;
-    text-align: left;
-    padding: 32px 8px 80px 8px;
-    opacity: 0;
-    pointer-events: none;
-
-    #close {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      font-size: 32px;
-      cursor: pointer;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      li {
-        margin-top: 24px;
-        transform: translateX(1400px);
-        transition: transform .3s;
-        cursor: pointer;
-      }
-      li:hover {
-        color: #b0c4de;
-      }
-    }
-  }
-
-  .overlay.show {
-    position: static;
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .overlay.show li {
-    transform: none;
-    transition-delay: .2s;
-  }
-  
-  // .overlay.show li:nth-child(1) {
-  //   transition-delay: .1s;
-  // }
 }
 

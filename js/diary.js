@@ -14,11 +14,12 @@
   const container = document.querySelector('.container');
   const gCounter = document.querySelector('.g-cnt');
   const bCounter = document.querySelector('.b-cnt');
+  const dayBtn = document.querySelector('.day-btn');
   
   // ハンバーガーメニュークリック時の動作
   let showHmenu = function() {
     // 日付メニューを前面に表示
-    overlay.classList.add('show');
+    overlay.classList.remove('done');
     // ヘッダ部分を非表示とする
     hedContents.classList.add('done');
     // 現在表示している日記画面を非表示とする
@@ -39,7 +40,7 @@
     }
     // 日記画面が2画面
     if (diary[disp_index].childElementCount === 5) {
-      // IMG画像のとき
+      // 動画のとき
       if (diary[disp_index].children[3].nodeName === 'VIDEO') {
         // 動画停止
         diary[disp_index].children[1].pause();
@@ -54,7 +55,8 @@
   // クローズボタンのクリックを待ち受ける
   close.addEventListener('click', () => {
     // 日付メニューを消す
-    overlay.classList.remove('show');
+    // overlay.classList.remove('show');
+    overlay.classList.add('done');
     // ヘッダ部分表示とする
     hedContents.classList.remove('done');
     // 日記画面を表示とする
@@ -69,15 +71,14 @@
     // 押されたのがボタンの時
     if (e.target.nodeName === 'LI') {
       // 日付メニューを消す
-      overlay.classList.remove('show');
+      // overlay.classList.remove('show');
+      overlay.classList.add('done');
       // 日記画面をサーチ
       document.querySelectorAll('.diary').forEach((diary, index) => {
         // 押されたボタンの日記画面なら
         if (diary.id === e.target.id) {
           // インデックスを保存
           disp_index = index;
-          // 日付のIDを保存
-          // diaryId = diary.id;
           // 日記画面を表示する
           diary.classList.remove('done');
           // ヘッダ部分を表示する
@@ -97,10 +98,10 @@
   });
 
   // いいね数初期化
-  for (let i = 0;  i < 11; i++) {
+  for (let i = 0;  i < dayBtn.childElementCount; i++) {
     gnum[i] = 0;
   }
-  // いいね音声のインスタンス作成
+  // いいね/よくないね音声のインスタンス作成
   let good_audio = new Audio("audio/good.mp3");
   let bad_audio = new Audio("audio/bad.mp3");
   // いいねボタンのクリックを待ち受ける
