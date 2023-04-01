@@ -15,6 +15,7 @@
   const gCounter = document.querySelector('.g-cnt');
   const bCounter = document.querySelector('.b-cnt');
   const dayBtn = document.querySelector('.day-btn');
+  const historyBtn = document.querySelector('.history');
   
   // ハンバーガーメニュークリック時の動作
   let showHmenu = function() {
@@ -22,6 +23,8 @@
     overlay.classList.remove('done');
     // ヘッダ部分を非表示とする
     hedContents.classList.add('done');
+    // 更新履歴ボタンを非表示とする
+    historyBtn.classList.add('done');
     // 現在表示している日記画面を非表示とする
     const diary = document.querySelectorAll('.diary');
     diary[disp_index].classList.add('done');
@@ -55,7 +58,6 @@
   // クローズボタンのクリックを待ち受ける
   close.addEventListener('click', () => {
     // 日付メニューを消す
-    // overlay.classList.remove('show');
     overlay.classList.add('done');
     // ヘッダ部分表示とする
     hedContents.classList.remove('done');
@@ -83,7 +85,9 @@
           diary.classList.remove('done');
           // ヘッダ部分を表示する
           hedContents.classList.remove('done');
-          // いいね/よくないねを非示する
+          // 更新履歴ボタンを表示する
+          historyBtn.classList.remove('done');
+          // いいね/よくないねを表示する
           container.classList.remove('done');
           // いいね数を設定
           gCounter.textContent = gnum[disp_index];

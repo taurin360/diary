@@ -5,7 +5,6 @@
 
 body {
   background: #f0f8ff;
-  margin-bottom: 40pxkf;
 }
 body header {
   background: #e6e6fa;
@@ -82,10 +81,10 @@ body .overlay.done {
   display: none;
 }
 body main {
-  padding: 0 16px;
+  padding: 0 24px;
 }
 body main .diary {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #e6e6fa;
   padding-bottom: 48px;
 }
 body main .diary p {
@@ -104,6 +103,7 @@ body main .done {
 body main .container {
   padding: 16px 0 40px 0;
   height: 32px;
+  border-bottom: 1px solid #e6e6fa;
 }
 body main .container .g-btn {
   display: flex;
@@ -122,13 +122,20 @@ body main .container .b-btn span {
 body main .container .done {
   display: none;
 }
+body footer {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
 body footer .history {
   text-decoration: none;
   margin: 40px;
   padding: 8px 16px 8px 16px;
-  background: #c0c0c0;
+  background: #b0c4de;
   color: #696969;
   border: 1px solid #808080;
   border-radius: 10px;
+}
+body footer .done {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

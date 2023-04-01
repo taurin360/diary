@@ -8,7 +8,6 @@
 body {
   // 薄いブルー
   background: #f0f8ff;
-  margin-bottom: 40pxkf;
 
   // ヘッダー
   header {
@@ -86,10 +85,10 @@ body {
 
   // 日記画像と文章
   main {
-    padding: 0 16px;
+    padding: 0 24px;
 
     .diary {
-      border-bottom: 1px solid #000;
+      border-bottom: 1px solid #e6e6fa;
       padding-bottom: 48px;
 
       p {
@@ -115,6 +114,7 @@ body {
     .container {
       padding: 16px 0 40px 0;
       height: 32px;
+      border-bottom: 1px solid #e6e6fa;
       .g-btn {
         display: flex;
         span {
@@ -136,14 +136,19 @@ body {
   }
 
   footer {
+    margin-top: 24px;
+    margin-bottom: 24px;
     .history {
       text-decoration: none;
       margin: 40px;
       padding: 8px 16px 8px 16px;
-      background: #c0c0c0;
+      background: #b0c4de;
       color: #696969;
       border: 1px solid #808080;
       border-radius: 10px;
+    }
+    .done {
+      display: none;
     }
   }
 
