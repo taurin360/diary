@@ -8,6 +8,7 @@
 body {
   // 薄いブルー
   background: #f0f8ff;
+  margin-bottom: 40pxkf;
 
   // ヘッダー
   header {
@@ -136,7 +137,13 @@ body {
 
   footer {
     .history {
-      padding: 0 0 0 40px;
+      text-decoration: none;
+      margin: 40px;
+      padding: 8px 16px 8px 16px;
+      background: #c0c0c0;
+      color: #696969;
+      border: 1px solid #808080;
+      border-radius: 10px;
     }
   }
 
