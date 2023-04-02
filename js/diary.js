@@ -20,16 +20,16 @@
   // ハンバーガーメニュークリック時の動作
   let showHmenu = function() {
     // 日付メニューを前面に表示
-    overlay.classList.remove('done');
+    overlay.classList.remove('dnone');
     // ヘッダ部分を非表示とする
-    hedContents.classList.add('done');
+    hedContents.classList.add('dnone');
     // 更新履歴ボタンを非表示とする
-    historyBtn.classList.add('done');
+    historyBtn.classList.add('dnone');
     // 現在表示している日記画面を非表示とする
     const diary = document.querySelectorAll('.diary');
-    diary[disp_index].classList.add('done');
+    diary[disp_index].classList.add('dnone');
     // いいね/よくないねを非表示
-    container.classList.add('done');
+    container.classList.add('dnone');
     // いいね/よくないね音声を停止
     good_audio.pause();
     bad_audio.pause();
@@ -58,14 +58,14 @@
   // クローズボタンのクリックを待ち受ける
   close.addEventListener('click', () => {
     // 日付メニューを消す
-    overlay.classList.add('done');
+    overlay.classList.add('dnone');
     // ヘッダ部分表示とする
-    hedContents.classList.remove('done');
+    hedContents.classList.remove('dnone');
     // 日記画面を表示とする
     const diary = document.querySelectorAll('.diary');
-    diary[disp_index].classList.remove('done');
+    diary[disp_index].classList.remove('dnone');
     // いいね/よくないねを非示
-    container.classList.remove('done');
+    container.classList.remove('dnone');
   });
 
   // 日付ボタンのクリックを待ち受ける
@@ -74,7 +74,7 @@
     if (e.target.nodeName === 'LI') {
       // 日付メニューを消す
       // overlay.classList.remove('show');
-      overlay.classList.add('done');
+      overlay.classList.add('dnone');
       // 日記画面をサーチ
       document.querySelectorAll('.diary').forEach((diary, index) => {
         // 押されたボタンの日記画面なら
@@ -82,20 +82,20 @@
           // インデックスを保存
           disp_index = index;
           // 日記画面を表示する
-          diary.classList.remove('done');
+          diary.classList.remove('dnone');
           // ヘッダ部分を表示する
-          hedContents.classList.remove('done');
+          hedContents.classList.remove('dnone');
           // 更新履歴ボタンを表示する
-          historyBtn.classList.remove('done');
+          historyBtn.classList.remove('dnone');
           // いいね/よくないねを表示する
-          container.classList.remove('done');
+          container.classList.remove('dnone');
           // いいね数を設定
           gCounter.textContent = gnum[disp_index];
         }
         // 押されたボタンの日記画面以外
         else {
           // 日記画面を非表示にする
-          diary.classList.add('done');
+          diary.classList.add('dnone');
         }
       });
     }

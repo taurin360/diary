@@ -29,7 +29,7 @@ body {
         }
       }
     }
-    .hedContents.done {
+    .hedContents.dnone {
       display: none;
     }
 
@@ -79,7 +79,7 @@ body {
     }
   }
 
-  .overlay.done {
+  .overlay.dnone {
     display: none;
   }
 
@@ -106,7 +106,7 @@ body {
       list-style:none
     }
     
-    .done {
+    .dnone {
       display: none;
     }
   
@@ -129,7 +129,7 @@ body {
           cursor: pointer;
         }
       }
-      .done {
+      .dnone {
         display: none;
       }
     }
@@ -147,7 +147,7 @@ body {
       border: 1px solid #808080;
       border-radius: 10px;
     }
-    .done {
+    .dnone {
       display: none;
     }
   }
