@@ -1,5 +1,5 @@
 
-// 共通
+/*  共通 */
 * {
   margin: 0;
   padding: 0;
@@ -40,7 +40,7 @@ body {
     }
   }
 
-  // ハンバーガーメニュー表示
+  /* ハンバーガーメニュー表示 */
   .overlay {
     text-align: left;
     padding: 32px 8px 8px 8px;
@@ -62,7 +62,9 @@ body {
         animation-name: fadeInAnime;
         animation-duration:3s;
         animation-fill-mode:forwards;
-        opacity: 0;
+        &:hover {
+          color: #b0c4de;
+        }
       }
       @keyframes fadeInAnime{
         0% {
@@ -73,9 +75,6 @@ body {
           opacity: 1;
         }
       }
-      li:hover {
-        color: #b0c4de;
-      }
     }
   }
 
@@ -83,7 +82,7 @@ body {
     display: none;
   }
 
-  // 日記画像と文章
+  /* 日記画像と文章 */
   main {
     padding: 0 24px;
 
@@ -135,6 +134,7 @@ body {
     }
   }
 
+  /* フッター */
   footer {
     margin-top: 24px;
     margin-bottom: 24px;
