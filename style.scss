@@ -90,6 +90,12 @@ body {
       border-bottom: 1px solid #e6e6fa;
       padding-bottom: 48px;
 
+      img, video, p {
+        width: 50%;
+        max-width: 400px;
+        min-width: 264px;
+      }
+
       p {
         padding: 16px 0;
         line-height: 30px;

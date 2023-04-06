@@ -91,6 +91,11 @@ body main .diary {
   border-bottom: 1px solid #e6e6fa;
   padding-bottom: 48px;
 }
+body main .diary img, body main .diary video, body main .diary p {
+  width: 50%;
+  max-width: 400px;
+  min-width: 264px;
+}
 body main .diary p {
   padding: 16px 0;
   line-height: 30px;
