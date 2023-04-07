@@ -88,6 +88,7 @@ body {
 
     .diary {
       border-bottom: 1px solid #e6e6fa;
+      text-align: center;
 
       img, video, h2, p {
         width: 50%;
@@ -103,9 +104,11 @@ body {
       h2, p {
         padding: 16px 0;
         line-height: 2;
+        margin: 0 auto;
       }
 
       p {
+        text-align: left;
         margin-bottom: 32px;
       }
 
