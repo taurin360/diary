@@ -88,23 +88,23 @@ body {
 
     .diary {
       border-bottom: 1px solid #e6e6fa;
-      text-align: center;
 
       img, video, h2, p {
         width: 50%;
         max-width: 400px;
         min-width: 264px;
+        margin: 0 auto;
       }
 
       img, video {
         box-shadow: 8px 8px 4px gray;
         border-radius: 8px;
+        display: block;
       }
 
       h2, p {
         padding: 16px 0;
         line-height: 2;
-        margin: 0 auto;
       }
 
       p {
