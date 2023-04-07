@@ -29,13 +29,13 @@ body header .hedContents .sp-menu #open {
   font-size: 32px;
   cursor: pointer;
 }
-body header .hedContents.dnone {
-  display: none;
-}
 body header h1 {
   font-size: 16px;
   padding: 16px 0 0 0;
   text-align: center;
+}
+body header .dnone {
+  display: none;
 }
 body .overlay {
   text-align: left;
@@ -53,7 +53,7 @@ body .overlay ul {
   margin: 0;
   padding: 0;
 }
-body .overlay ul li {
+body .overlay ul li, body .overlay ul a {
   margin-top: 24px;
   cursor: pointer;
   -webkit-animation-name: fadeInAnime;
@@ -63,8 +63,12 @@ body .overlay ul li {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-body .overlay ul li:hover {
+body .overlay ul li:hover, body .overlay ul a:hover {
   color: #b0c4de;
+}
+body .overlay ul a {
+  display: block;
+  text-decoration: none;
 }
 @-webkit-keyframes fadeInAnime {
   0% {
@@ -111,9 +115,10 @@ body main .diary p {
   margin-bottom: 32px;
 }
 body main .diary h2 {
-  font-weight: normal;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 20px;
   text-align: center;
+  opacity: 0.5;
 }
 body main ul {
   padding-left: 0;
@@ -142,9 +147,6 @@ body main .good-bad .b-btn {
 body main .good-bad .b-btn span {
   padding: 0 16px 0 16px;
   cursor: pointer;
-}
-body main .good-bad .dnone {
-  display: none;
 }
 body footer {
   margin-top: 24px;
