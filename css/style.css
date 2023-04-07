@@ -6,6 +6,7 @@
 }
 
 body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   background: #f0f8ff;
   /* ハンバーガーメニュー表示 */
   /* 日記画像と文章 */
@@ -89,16 +90,27 @@ body main {
 }
 body main .diary {
   border-bottom: 1px solid #e6e6fa;
-  padding-bottom: 48px;
 }
-body main .diary img, body main .diary video, body main .diary p {
+body main .diary img, body main .diary video, body main .diary h2, body main .diary p {
   width: 50%;
   max-width: 400px;
   min-width: 264px;
 }
-body main .diary p {
+body main .diary img, body main .diary video {
+  box-shadow: 8px 8px 4px gray;
+  border-radius: 8px;
+}
+body main .diary h2, body main .diary p {
   padding: 16px 0;
-  line-height: 30px;
+  line-height: 2;
+}
+body main .diary p {
+  margin-bottom: 32px;
+}
+body main .diary h2 {
+  font-weight: normal;
+  font-size: 16px;
+  text-align: center;
 }
 body main ul {
   padding-left: 0;
@@ -109,26 +121,26 @@ body main li {
 body main .dnone {
   display: none;
 }
-body main .container {
+body main .good-bad {
   padding: 16px 0 40px 0;
   height: 32px;
   border-bottom: 1px solid #e6e6fa;
 }
-body main .container .g-btn {
+body main .good-bad .g-btn {
   display: flex;
 }
-body main .container .g-btn span {
+body main .good-bad .g-btn span {
   padding: 0 16px 0 16px;
   cursor: pointer;
 }
-body main .container .b-btn {
+body main .good-bad .b-btn {
   display: flex;
 }
-body main .container .b-btn span {
+body main .good-bad .b-btn span {
   padding: 0 16px 0 16px;
   cursor: pointer;
 }
-body main .container .dnone {
+body main .good-bad .dnone {
   display: none;
 }
 body footer {

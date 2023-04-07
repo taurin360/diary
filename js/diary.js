@@ -14,7 +14,7 @@
   const diary = document.querySelectorAll('.diary');
   const hedContents = document.querySelector('.hedContents');
   const overlay = document.querySelector('.overlay');
-  const container = document.querySelector('.container');
+  const goodBad = document.querySelector('.good-bad');
   const dayBtn = document.querySelector('.day-btn');
   const historyBtn = document.querySelector('.history');
 
@@ -32,7 +32,7 @@
     // 現在表示している日記画面を非表示とする
     diary[disp_index].classList.add('dnone');
     // いいね/よくないねを非表示
-    container.classList.add('dnone');
+    goodBad.classList.add('dnone');
     // いいね/よくないね音声を停止
     good_audio.pause();
     bad_audio.pause();
@@ -77,7 +77,7 @@
     // 日記画面を表示とする
     diary[disp_index].classList.remove('dnone');
     // いいね/よくないねを非示
-    container.classList.remove('dnone');
+    goodBad.classList.remove('dnone');
     // 更新履歴ボタンを表示する
     historyBtn.classList.remove('dnone');
     // タイプライタ表示
@@ -112,7 +112,7 @@
           // 更新履歴ボタンを表示する
           historyBtn.classList.remove('dnone');
           // いいね/よくないねを表示する
-          container.classList.remove('dnone');
+          goodBad.classList.remove('dnone');
           // いいね数を設定
           gCounter.textContent = gnum[disp_index];
           // タイプライタ表示

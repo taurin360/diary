@@ -6,7 +6,7 @@
 }
 
 body {
-  // 薄いブルー
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   background: #f0f8ff;
 
   // ヘッダー
@@ -88,17 +88,31 @@ body {
 
     .diary {
       border-bottom: 1px solid #e6e6fa;
-      padding-bottom: 48px;
 
-      img, video, p {
+      img, video, h2, p {
         width: 50%;
         max-width: 400px;
         min-width: 264px;
       }
 
-      p {
+      img, video {
+        box-shadow: 8px 8px 4px gray;
+        border-radius: 8px;
+      }
+
+      h2, p {
         padding: 16px 0;
-        line-height: 30px;
+        line-height: 2;
+      }
+
+      p {
+        margin-bottom: 32px;
+      }
+
+      h2 {
+        font-weight: normal;
+        font-size: 16px;
+        text-align: center;
       }
 
     }
@@ -116,7 +130,7 @@ body {
     }
   
     // いいね/よくないねボタン
-    .container {
+    .good-bad {
       padding: 16px 0 40px 0;
       height: 32px;
       border-bottom: 1px solid #e6e6fa;
