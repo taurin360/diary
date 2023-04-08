@@ -12,83 +12,74 @@ body {
   // ヘッダー
   header {
     background: #e6e6fa;
+    // position: fixed;
+    // top: 0;
+    // width: 100%;
 
-    .hedContents {
-      padding: 0 8px;
-      padding-bottom: 18px;
-      display: flex;
-      justify-content: space-between;
+    .menu-header {
       h1 {
-        margin: 0 auto;
+        font-size: 16px;
+        padding: 16px 0;
+        line-height: 64px;
+        text-align: center;
       }
-      .sp-menu {
-        #open {
-          padding-top: 4px;
-          font-size: 32px;
-          cursor: pointer;
-        }
+      .history {
+        padding: 0 0 16px 16px;
+      }
+      .history p a {
+        text-decoration: none;
+        color: inherit;
       }
     }
-
-    h1 {
-      font-size: 16px;
-      padding: 16px 0 0 0;
+    .diary-header p {
       text-align: center;
+      padding: 16px 0;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
     }
     .dnone {
       display: none;
     }
   }
 
-  /* ハンバーガーメニュー表示 */
-  .overlay {
-    text-align: left;
-    padding: 32px 8px 8px 8px;
-    #close {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      font-size: 32px;
-      cursor: pointer;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      li, a {
-        margin-top: 24px;
-        cursor: pointer;
-        animation-name: fadeInAnime;
-        animation-duration:3s;
-        animation-fill-mode:forwards;
-        &:hover {
-          color: #b0c4de;
-        }
-      }
-      a {
-        display: block;
-        text-decoration: none;
-      }
-      @keyframes fadeInAnime{
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .overlay.dnone {
-    display: none;
-  }
-
-  /* 日記画像と文章 */
   main {
-    padding: 0 24px;
 
+    /* 過去の日記一覧表示 */
+    .diary-list {
+      text-align: left;
+      padding: 8px 8px;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li, a {
+          margin-top: 16px;
+          cursor: pointer;
+          animation-name: fadeInAnime;
+          animation-duration:3s;
+          animation-fill-mode:forwards;
+          &:hover {
+            color: #b0c4de;
+          }
+        }
+        a {
+          display: block;
+          text-decoration: none;
+        }
+        @keyframes fadeInAnime{
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    /* 日記画像と文章 */
     .diary {
       border-bottom: 1px solid #e6e6fa;
 
@@ -158,23 +149,23 @@ body {
     }
   }
 
-  /* フッター */
-  footer {
-    margin-top: 24px;
-    margin-bottom: 24px;
-    .history {
-      text-decoration: none;
-      margin: 40px;
-      padding: 8px 16px 8px 16px;
-      background: #b0c4de;
-      color: #696969;
-      border: 1px solid #808080;
-      border-radius: 10px;
-    }
-    .dnone {
-      display: none;
-    }
-  }
+  // /* フッター */
+  // footer {
+  //   margin-top: 24px;
+  //   margin-bottom: 24px;
+  //   .history {
+  //     text-decoration: none;
+  //     margin: 40px;
+  //     padding: 8px 16px 8px 16px;
+  //     background: #b0c4de;
+  //     color: #696969;
+  //     border: 1px solid #808080;
+  //     border-radius: 10px;
+  //   }
+  //   .dnone {
+  //     display: none;
+  //   }
+  // }
 
 }
 

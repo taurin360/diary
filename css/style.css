@@ -8,53 +8,49 @@
 body {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   background: #f0f8ff;
-  /* ハンバーガーメニュー表示 */
-  /* 日記画像と文章 */
-  /* フッター */
 }
 body header {
   background: #e6e6fa;
 }
-body header .hedContents {
-  padding: 0 8px;
-  padding-bottom: 18px;
-  display: flex;
-  justify-content: space-between;
-}
-body header .hedContents h1 {
-  margin: 0 auto;
-}
-body header .hedContents .sp-menu #open {
-  padding-top: 4px;
-  font-size: 32px;
-  cursor: pointer;
-}
-body header h1 {
+body header .menu-header h1 {
   font-size: 16px;
-  padding: 16px 0 0 0;
+  padding: 16px 0;
+  line-height: 64px;
   text-align: center;
+}
+body header .menu-header .history {
+  padding: 0 0 16px 16px;
+}
+body header .menu-header .history p a {
+  text-decoration: none;
+  color: inherit;
+}
+body header .diary-header p {
+  text-align: center;
+  padding: 16px 0;
+}
+body header .diary-header p a {
+  text-decoration: none;
+  color: inherit;
 }
 body header .dnone {
   display: none;
 }
-body .overlay {
+body main {
+  /* 過去の日記一覧表示 */
+  /* 日記画像と文章 */
+}
+body main .diary-list {
   text-align: left;
-  padding: 32px 8px 8px 8px;
+  padding: 8px 8px;
 }
-body .overlay #close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 32px;
-  cursor: pointer;
-}
-body .overlay ul {
+body main .diary-list ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-body .overlay ul li, body .overlay ul a {
-  margin-top: 24px;
+body main .diary-list ul li, body main .diary-list ul a {
+  margin-top: 16px;
   cursor: pointer;
   -webkit-animation-name: fadeInAnime;
           animation-name: fadeInAnime;
@@ -63,10 +59,10 @@ body .overlay ul li, body .overlay ul a {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-body .overlay ul li:hover, body .overlay ul a:hover {
+body main .diary-list ul li:hover, body main .diary-list ul a:hover {
   color: #b0c4de;
 }
-body .overlay ul a {
+body main .diary-list ul a {
   display: block;
   text-decoration: none;
 }
@@ -85,12 +81,6 @@ body .overlay ul a {
   100% {
     opacity: 1;
   }
-}
-body .overlay.dnone {
-  display: none;
-}
-body main {
-  padding: 0 24px;
 }
 body main .diary {
   border-bottom: 1px solid #e6e6fa;
@@ -147,21 +137,5 @@ body main .good-bad .b-btn {
 body main .good-bad .b-btn span {
   padding: 0 16px 0 16px;
   cursor: pointer;
-}
-body footer {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-body footer .history {
-  text-decoration: none;
-  margin: 40px;
-  padding: 8px 16px 8px 16px;
-  background: #b0c4de;
-  color: #696969;
-  border: 1px solid #808080;
-  border-radius: 10px;
-}
-body footer .dnone {
-  display: none;
 }
 /*# sourceMappingURL=style.css.map */

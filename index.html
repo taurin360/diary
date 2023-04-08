@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<!-- Mirrored from taurin360.github.io/diary/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 Mar 2023 01:03:29 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,38 +12,39 @@
 </head>
 <body>
   <header>
-    <div class="hedContents">
+    <div class="menu-header">
       <h1>日常をきまぐれに書く日記です。</h1>
-      <div class="sp-menu">
-        <span class="material-icons" id="open">menu</span>
+      <div class="history">
+        <p><a href="html/history.html">更新履歴</a></p>
       </div>
+    </div>
+    <div class="diary-header dnone">
+      <p><a href="index.html">メニューに戻る</a></p>
     </div>
   </header>
 
-  <section class="overlay dnone">
-    <span class="material-icons" id="close">close</span>
-    <nav>
-      <ul class="day-btn">
-        <li id="20230406">2023年04月06日 スニーカーを買った</li>
-        <li id="20230330">2023年03月30日 例年より早い花見</li>
-        <li id="20230328">2023年03月25日 シン・仮面ライダー</li>
-        <!-- <a href="html/history.html">2023年03月25日 シン・仮面ライダー　<img src="img/new.png" width="40"></a> -->
-        <li id="20230325">2023年03月25日 広島お好み焼き 八昌</li>
-        <li id="20230324">2023年03月24日 得々うどん最後の日</li>
-        <li id="20230322">2023年03月22日 豆乳坦々春雨</li>
-        <li id="20230321">2023年03月21日 村上サヨナラ打!</li>
-        <li id="20230319">2023年03月19日 ビビンバ&冷麺</li>
-        <li id="20230318">2023年03月18日 高菜が送られてきた！</li>
-        <li id="20230314">2023年03月14日 調味料は箱入りに。。</li>
-        <li id="20230310">2023年03月10日 ふわふわのパンケーキ</li>
-        <li id="20230307">2023年03月07日 お昼の豚骨ラーメン店</li>
-      </ul>
-    </nav>
-  </section>
-
   <main>
+    <section class="diary-list">
+      <nav>
+        <ul class="day-btn">
+          <li id="20230406">2023年04月06日 スニーカーを買った<img src="img/new.png" width="32" alt="最新日記"></li>
+          <li id="20230330">2023年03月30日 例年より早い花見</li>
+          <li id="20230328">2023年03月25日 シン・仮面ライダー</li>
+          <li id="20230325">2023年03月25日 広島お好み焼き 八昌</li>
+          <li id="20230324">2023年03月24日 得々うどん最後の日</li>
+          <li id="20230322">2023年03月22日 豆乳坦々春雨</li>
+          <li id="20230321">2023年03月21日 村上サヨナラ打!</li>
+          <li id="20230319">2023年03月19日 ビビンバ&冷麺</li>
+          <li id="20230318">2023年03月18日 高菜が送られてきた！</li>
+          <li id="20230314">2023年03月14日 調味料は箱入りに。。</li>
+          <li id="20230310">2023年03月10日 ふわふわのパンケーキ</li>
+          <li id="20230307">2023年03月07日 お昼の豚骨ラーメン店</li>
+        </ul>
+      </nav>
+    </section>
+
     <ul class="diary-all">
-      <li class='diary' id="20230406">
+      <li class='diary dnone' id="20230406">
         <h2><time datetime="2023-04-06">2023年04月06日(木)</time></h2>
         <video controls src="img/20230406.mp4" alt="2023年04月06日動画"></video>
         <p class="d-twr">スニーカーを新しく買った。ひとつ前に買ったスニーカーは横幅がきつく、履いていると血が出てしまったので仕方なく捨てちゃいました。😭今日はちゃんと「横幅ワイドモデル」です。😊</p>
@@ -110,7 +108,7 @@
       </li>
     </ul>
 
-    <section class="good-bad">
+    <section class="good-bad dnone">
       <div class="g-btn">
         <span class="material-icons" id="good">thumb_up</span>
         <p>いいね。　　カウント数：</p>
@@ -122,10 +120,10 @@
         <p id="b-cnt">0</p>
       </div>
     </section>
+
   </main>
 
   <footer>
-    <a href="html/history.html" class="history">History</a>
   </footer>
 
   <script src="js/diary.js"></script>
