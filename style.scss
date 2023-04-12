@@ -12,9 +12,6 @@ body {
   // ヘッダー
   header {
     background: #e6e6fa;
-    // position: fixed;
-    // top: 0;
-    // width: 100%;
 
     .menu-header {
       h1 {
@@ -23,10 +20,16 @@ body {
         line-height: 64px;
         text-align: center;
       }
-      .history {
-        padding: 0 0 16px 16px;
-      }
-      .history p a {
+      .contents {
+        // padding: 0 0 16px 16px;
+        display: flex;
+        p {
+          a {
+            text-decoration: none;
+            color: inherit;
+            padding: 0 0 8px 8px;
+          }
+        }
         text-decoration: none;
         color: inherit;
       }
@@ -46,7 +49,6 @@ body {
 
   main {
 
-    /* 過去の日記一覧表示 */
     .diary-list {
       text-align: left;
       padding: 8px 8px;
@@ -54,7 +56,8 @@ body {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        li, a {
+        li,
+         a {
           margin-top: 16px;
           cursor: pointer;
           animation-name: fadeInAnime;
@@ -79,24 +82,28 @@ body {
       }
     }
 
-    /* 日記画像と文章 */
     .diary {
       border-bottom: 1px solid #e6e6fa;
 
-      img, video, h2, p {
+      img,
+      video,
+      h2,
+      p {
         width: 50%;
         max-width: 400px;
         min-width: 264px;
         margin: 0 auto;
       }
 
-      img, video {
+      img,
+      video {
         box-shadow: 8px 8px 4px gray;
         border-radius: 8px;
         display: block;
       }
 
-      h2, p {
+      h2,
+      p {
         padding: 16px 0;
         line-height: 2;
       }
@@ -148,24 +155,6 @@ body {
       }
     }
   }
-
-  // /* フッター */
-  // footer {
-  //   margin-top: 24px;
-  //   margin-bottom: 24px;
-  //   .history {
-  //     text-decoration: none;
-  //     margin: 40px;
-  //     padding: 8px 16px 8px 16px;
-  //     background: #b0c4de;
-  //     color: #696969;
-  //     border: 1px solid #808080;
-  //     border-radius: 10px;
-  //   }
-  //   .dnone {
-  //     display: none;
-  //   }
-  // }
 
 }
 

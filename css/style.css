@@ -18,12 +18,15 @@ body header .menu-header h1 {
   line-height: 64px;
   text-align: center;
 }
-body header .menu-header .history {
-  padding: 0 0 16px 16px;
-}
-body header .menu-header .history p a {
+body header .menu-header .contents {
+  display: flex;
   text-decoration: none;
   color: inherit;
+}
+body header .menu-header .contents p a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0 0 8px 8px;
 }
 body header .diary-header p {
   text-align: center;
@@ -36,10 +39,6 @@ body header .diary-header p a {
 body header .dnone {
   display: none;
 }
-body main {
-  /* 過去の日記一覧表示 */
-  /* 日記画像と文章 */
-}
 body main .diary-list {
   text-align: left;
   padding: 8px 8px;
@@ -49,7 +48,8 @@ body main .diary-list ul {
   margin: 0;
   padding: 0;
 }
-body main .diary-list ul li, body main .diary-list ul a {
+body main .diary-list ul li,
+body main .diary-list ul a {
   margin-top: 16px;
   cursor: pointer;
   -webkit-animation-name: fadeInAnime;
@@ -59,7 +59,8 @@ body main .diary-list ul li, body main .diary-list ul a {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-body main .diary-list ul li:hover, body main .diary-list ul a:hover {
+body main .diary-list ul li:hover,
+body main .diary-list ul a:hover {
   color: #b0c4de;
 }
 body main .diary-list ul a {
@@ -85,18 +86,23 @@ body main .diary-list ul a {
 body main .diary {
   border-bottom: 1px solid #e6e6fa;
 }
-body main .diary img, body main .diary video, body main .diary h2, body main .diary p {
+body main .diary img,
+body main .diary video,
+body main .diary h2,
+body main .diary p {
   width: 50%;
   max-width: 400px;
   min-width: 264px;
   margin: 0 auto;
 }
-body main .diary img, body main .diary video {
+body main .diary img,
+body main .diary video {
   box-shadow: 8px 8px 4px gray;
   border-radius: 8px;
   display: block;
 }
-body main .diary h2, body main .diary p {
+body main .diary h2,
+body main .diary p {
   padding: 16px 0;
   line-height: 2;
 }
