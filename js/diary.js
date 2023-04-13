@@ -15,7 +15,6 @@
   const diaryList = document.querySelector('.diary-list');
   const goodBad = document.querySelector('.good-bad');
   const dayBtn = document.querySelector('.day-btn');
-  const historyBtn = document.querySelector('.history');
 
   // ---------------------------------------------------------------------
   // 日付ボタン押下処理
@@ -38,8 +37,6 @@
           menuHeader.classList.add('dnone');
           // 日記画面ヘッダ部分を表示する
           diaryHeader.classList.remove('dnone');
-          // 更新履歴ボタンを表示する
-          historyBtn.classList.remove('dnone');
           // いいね/よくないねを表示する
           goodBad.classList.remove('dnone');
           // いいね数を設定
