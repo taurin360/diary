@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+/* ホバーしたら背景色を変える */
+tbody:hover {
+  background: #fff8dc;
+}
