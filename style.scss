@@ -21,25 +21,27 @@ body {
         text-align: center;
       }
       .contents {
-        // padding: 0 0 16px 16px;
         display: flex;
         p {
           a {
             text-decoration: none;
             color: inherit;
             padding: 0 0 8px 8px;
+            @media (min-width: 800px) {
+              padding: 0 0 64px 64px;
+            }
           }
         }
-        text-decoration: none;
-        color: inherit;
       }
     }
-    .diary-header p {
-      text-align: center;
-      padding: 16px 0;
-      a {
-        text-decoration: none;
-        color: inherit;
+    .diary-header {
+      p {
+        text-align: center;
+        padding: 16px 0;
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
       }
     }
     .dnone {
@@ -48,7 +50,8 @@ body {
   }
 
   main {
-
+    max-width: 1000px;
+    margin: 0 auto;
     .diary-list {
       text-align: left;
       padding: 8px 8px;
@@ -82,44 +85,46 @@ body {
       }
     }
 
-    .diary {
-      border-bottom: 1px solid #e6e6fa;
+    .diary-contents {
+      border-left: 1px solid #e6e6fa;
+      .diary {
+        // border-bottom: 1px solid #e6e6fa;
+        img,
+        video,
+        h2,
+        p {
+          width: 50%;
+          max-width: 264px;
+          min-width: 264px;
+          margin: 0 auto;
+        }
 
-      img,
-      video,
-      h2,
-      p {
-        width: 50%;
-        max-width: 400px;
-        min-width: 264px;
-        margin: 0 auto;
+        img,
+        video {
+          box-shadow: 8px 8px 4px gray;
+          border-radius: 8px;
+          display: block;
+        }
+
+        h2,
+        p {
+          padding: 16px 0;
+          line-height: 2;
+        }
+
+        p {
+          text-align: left;
+          margin-bottom: 32px;
+        }
+
+        h2 {
+          font-weight: bold;
+          font-size: 20px;
+          text-align: center;
+          opacity: .5;
+        }
+
       }
-
-      img,
-      video {
-        box-shadow: 8px 8px 4px gray;
-        border-radius: 8px;
-        display: block;
-      }
-
-      h2,
-      p {
-        padding: 16px 0;
-        line-height: 2;
-      }
-
-      p {
-        text-align: left;
-        margin-bottom: 32px;
-      }
-
-      h2 {
-        font-weight: bold;
-        font-size: 20px;
-        text-align: center;
-        opacity: .5;
-      }
-
     }
 
     ul {
@@ -138,20 +143,30 @@ body {
     .good-bad {
       padding: 16px 0 40px 0;
       height: 32px;
-      border-bottom: 1px solid #e6e6fa;
-      .g-btn {
+      // border-bottom: 1px solid #e6e6fa;
+      .g-btn,
+      .b-btn {
         display: flex;
+        width: 50%;
+        max-width: 264px;
+        min-width: 264px;
+        margin: 0 auto;
         span {
           padding: 0 16px 0 16px;
           cursor: pointer;
         }
       }
-      .b-btn {
+    }
+
+    @media (min-width: 800px) {
+      .diary-all {
         display: flex;
-        span {
-          padding: 0 16px 0 16px;
-          cursor: pointer;
-        }
+      }
+      .diary-list {
+        flex-grow: 1;
+      }
+      .diary-contents {
+        flex-grow: 1;
       }
     }
   }

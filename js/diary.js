@@ -5,6 +5,7 @@
   let disp_index = 0;
   // いいね数
   let gnum = [];
+  let timeId;
   const good = document.getElementById('good');
   const bad = document.getElementById('bad');
   const gCounter = document.getElementById('g-cnt');
@@ -17,44 +18,63 @@
   const dayBtn = document.querySelector('.day-btn');
 
   // ---------------------------------------------------------------------
+  // タイプライタ表示開始処理
+  // ---------------------------------------------------------------------
+  let tipeWriter = function(){
+    if (diary[disp_index].children[2].nodeName === 'P' && 
+        diary[disp_index].children[2].classList.contains('d-twr') === true) {
+      charLen = diary[disp_index].children[2].textContent.length;
+      charP = diary[disp_index].children[2].textContent;
+      diary[disp_index].children[2].textContent = '';
+      charCnt = 0;
+      setTimeout(charSlice, 100);
+    }
+  }
+  // ---------------------------------------------------------------------
   // 日付ボタン押下処理
   // ---------------------------------------------------------------------
   // 日付ボタンのクリックを待ち受ける
   document.querySelector('.day-btn').addEventListener('click', e => {
     // 押されたのがボタンの時
     if (e.target.nodeName === 'LI') {
-      // 日付メニューを消す
-      diaryList.classList.add('dnone');
+      // 前回の日記がタイプライタのとき
+      if (diary[disp_index].children[2].nodeName === 'P' && 
+          diary[disp_index].children[2].classList.contains('d-twr') === true) {
+        // 文字列を元に戻す
+        diary[disp_index].children[2].textContent = charP;
+        // タイマ停止
+        clearTimeout(timeId);
+      }
+      // Window幅 800px以上
+      if (window.innerWidth >= 800) {
+        // 何もしない
+      } else {
+        // 日付メニューを消す
+        diaryList.classList.add('dnone');
+        // 先頭画面ヘッダ部分を非表示にする
+        menuHeader.classList.add('dnone');
+        // 日記画面ヘッダ部分を表示する
+        diaryHeader.classList.remove('dnone');
+        // いいね/よくないねを表示する
+        goodBad.classList.remove('dnone');
+        // いいね数を設定
+        gCounter.textContent = gnum[disp_index];
+      }
       // 日記画面をサーチ
-      document.querySelectorAll('.diary').forEach((diary, index) => {
+      document.querySelectorAll('.diary').forEach((diaryNow, index) => {
         // 押されたボタンの日記画面なら
-        if (diary.id === e.target.id) {
+        if (diaryNow.id === e.target.id) {
           // インデックスを保存
           disp_index = index;
           // 日記画面を表示する
-          diary.classList.remove('dnone');
-          // 先頭画面ヘッダ部分を非表示にする
-          menuHeader.classList.add('dnone');
-          // 日記画面ヘッダ部分を表示する
-          diaryHeader.classList.remove('dnone');
-          // いいね/よくないねを表示する
-          goodBad.classList.remove('dnone');
-          // いいね数を設定
-          gCounter.textContent = gnum[disp_index];
+          diary[disp_index].classList.remove('dnone');
           // タイプライタ表示
-          if (diary.children[2].nodeName === 'P' && 
-              diary.children[2].classList.contains('d-twr') === true) {
-            charLen = diary.children[2].textContent.length;
-            charP = diary.children[2].textContent;
-            diary.children[2].textContent = '';
-            charCnt = 0;
-            setTimeout(charSlice, 100);
-          }
+          tipeWriter();
         }
         // 押されたボタンの日記画面以外
         else {
           // 日記画面を非表示にする
-          diary.classList.add('dnone');
+          diaryNow.classList.add('dnone');
         }
       });
     }
@@ -100,7 +120,7 @@
   };
   
 // ---------------------------------------------------------------------
-// 画像押下処理(文章タイプライタ表示用)
+// タイプライタ表示処理
 // ---------------------------------------------------------------------
   let charCnt = 0;
   let charLen = diary[disp_index].children[2].textContent.length;
@@ -113,8 +133,62 @@
     }
     diary[disp_index].children[2].textContent += charP.slice(charCnt, 1 + charCnt);
     charCnt++;
-    setTimeout(charSlice, 100);
+    timeId = setTimeout(charSlice, 100);
   };
+// ---------------------------------------------------------------------
+// レスポンシブ対応
+// ---------------------------------------------------------------------
+  // 画面幅800px以上のとき
+  if (window.innerWidth >= 800) {
+    // 先頭日記画面を表示する
+    diary[0].classList.remove('dnone');
+    // いいね/よくないねを表示する
+    goodBad.classList.remove('dnone');
+    // タイプライタ表示
+    tipeWriter();
+  }
+
+  function resizeWindow() {
+    if (window.innerWidth >= 800) {
+      // 直前が先頭画面ヘッダ表示中 かつ 日記画面非表示中のとき
+      if (menuHeader.classList.contains('dnone') === false &&
+          diary[disp_index].classList.contains('dnone') === true) {
+        // 日記画面を表示する
+        diary[disp_index].classList.remove('dnone');
+        // いいね/よくないねを表示する
+        goodBad.classList.remove('dnone');
+        // タイプライタ表示
+        tipeWriter();
+      // 日記画面ヘッダ表示中のとき
+      } else if (diaryHeader.classList.contains('dnone') === false) {
+        // 日付メニューを表示する
+        diaryList.classList.remove('dnone');
+        // 先頭画面ヘッダ部分を表示する
+        menuHeader.classList.remove('dnone');
+        // 日記画面ヘッダ部分を非表示にする
+        diaryHeader.classList.add('dnone');
+      }
+    } else {
+      // 先頭画面ヘッダ表示中 かつ 日記画面表示中のとき
+      if (menuHeader.classList.contains('dnone') === false &&
+          diary[disp_index].classList.contains('dnone') === false) {
+        // 日記画面を非表示にする
+        diary[disp_index].classList.add('dnone');
+        // いいね/よくないねを非表示にする
+        goodBad.classList.add('dnone');
+        // 前回の日記がタイプライタのとき
+        if (diary[disp_index].children[2].nodeName === 'P' && 
+            diary[disp_index].children[2].classList.contains('d-twr') === true) {
+          // 文字列を元に戻す
+          diary[disp_index].children[2].textContent = charP;
+          // タイマ停止
+          clearTimeout(timeId);
+        }
+      }
+    }
+  }
+  // ウィンドウサイズ変更イベントを待ち受ける
+  window.addEventListener('resize', resizeWindow);
 
 }
 
