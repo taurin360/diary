@@ -45,6 +45,12 @@
         // タイマ停止
         clearTimeout(timeId);
       }
+      // 前回の日記がビデオのとき
+      if (diary[disp_index].children[1].nodeName === 'VIDEO') {
+        const video = diary[disp_index].children[1];
+        // 一時停止
+        video.pause();
+      }
       // Window幅 800px以上
       if (window.innerWidth >= 800) {
         // いいねカウント数初期化
@@ -60,6 +66,7 @@
         // いいね/よくないねを表示する
         goodBad.classList.remove('dnone');
         // いいね数初期化
+        gnum = 0;
         gCounter.textContent = '0';
       }
       // 日記画面をサーチ
