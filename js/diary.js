@@ -4,7 +4,7 @@
   // 初回表示のインデックスは0番目
   let disp_index = 0;
   // いいね数
-  let gnum = [];
+  let gnum = 0;
   let timeId;
   const good = document.getElementById('good');
   const bad = document.getElementById('bad');
@@ -47,7 +47,9 @@
       }
       // Window幅 800px以上
       if (window.innerWidth >= 800) {
-        // 何もしない
+        // いいねカウント数初期化
+        gnum = 0;
+        gCounter.textContent = '0';
       } else {
         // 日付メニューを消す
         diaryList.classList.add('dnone');
@@ -57,8 +59,8 @@
         diaryHeader.classList.remove('dnone');
         // いいね/よくないねを表示する
         goodBad.classList.remove('dnone');
-        // いいね数を設定
-        gCounter.textContent = gnum[disp_index];
+        // いいね数初期化
+        gCounter.textContent = '0';
       }
       // 日記画面をサーチ
       document.querySelectorAll('.diary').forEach((diaryNow, index) => {
@@ -83,19 +85,16 @@
   // ---------------------------------------------------------------------
   // いいね/よくないねボタン押下処理
   // ---------------------------------------------------------------------
-  // いいね数初期化
-  for (let i = 0;  i < dayBtn.childElementCount; i++) {
-    gnum[i] = 0;
-  }
   // いいね/よくないね音声のインスタンス作成
   let good_audio = new Audio("audio/good.mp3");
   let bad_audio = new Audio("audio/bad.mp3");
+
   // いいねボタンのクリックを待ち受ける
   good.addEventListener('click', () => {
     // いいね。カウントアップ
-    gnum[disp_index]++;
+    gnum++;
     // いいね。カウント数表示
-    gCounter.textContent = `${gnum[disp_index]}`;
+    gCounter.textContent = `${gnum}`;
     // いいね音声を頭から再生
     bad_audio.pause();
     good_audio.currentTime = 0;
@@ -104,7 +103,7 @@
 
   // よくないねボタンのクリックを待ち受ける
   bad.addEventListener('click', () => {
-    // いいね。カウント数表示
+    // よくないねカウント数表示
     bCounter.textContent = '1';
     // よくないね音声を頭から再生
     good_audio.pause();
@@ -115,7 +114,7 @@
   });
 
   let bcntRev = function(){
-    // いいね。カウント数表示
+    // よくないねカウント数表示
     bCounter.textContent = '0';
   };
   
@@ -174,6 +173,9 @@
           diary[disp_index].classList.contains('dnone') === false) {
         // 日記画面を非表示にする
         diary[disp_index].classList.add('dnone');
+        // いいねカウント数初期化
+        gnum = 0;
+        gCounter.textContent = '0';
         // いいね/よくないねを非表示にする
         goodBad.classList.add('dnone');
         // 前回の日記がタイプライタのとき
