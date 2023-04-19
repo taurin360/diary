@@ -50,6 +50,7 @@
         const video = diary[disp_index].children[1];
         // 一時停止
         video.pause();
+        video.currentTime = 0;
       }
       // Window幅 800px以上
       if (window.innerWidth >= 800) {
