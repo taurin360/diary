@@ -73,7 +73,7 @@
       // 日記画面をサーチ
       document.querySelectorAll('.diary').forEach((diaryNow, index) => {
         // 押されたボタンの日記画面なら
-        if (diaryNow.id === e.target.id) {
+          if (diaryNow.children[3].textContent === e.target.children[0].textContent) {
           // インデックスを保存
           disp_index = index;
           // 日記画面を表示する
@@ -161,7 +161,7 @@
       if (menuHeader.classList.contains('dnone') === false &&
           diary[disp_index].classList.contains('dnone') === true) {
         // 日記画面を表示する
-        diary[disp_index].classList.remove('dnone');
+        diary[disp_index].classList.remove('dnone'); 
         // いいね/よくないねを表示する
         goodBad.classList.remove('dnone');
         // タイプライタ表示
