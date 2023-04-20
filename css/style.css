@@ -117,6 +117,30 @@ body main .diary-contents .diary p {
   text-align: left;
   margin-bottom: 32px;
 }
+body main .diary-contents .diary .sld-in {
+  -webkit-animation: SlideIn 8s;
+          animation: SlideIn 8s;
+}
+@-webkit-keyframes SlideIn {
+  0% {
+    opacity: 0; /*初期状態では透明に*/
+    transform: translateY(128px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes SlideIn {
+  0% {
+    opacity: 0; /*初期状態では透明に*/
+    transform: translateY(128px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 body main .diary-contents .diary h2 {
   font-weight: bold;
   font-size: 20px;

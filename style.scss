@@ -117,6 +117,21 @@ body {
           margin-bottom: 32px;
         }
 
+        .sld-in {
+          animation: SlideIn 8s;
+        }
+
+        @keyframes SlideIn {
+          0% {
+            opacity: 0;/*初期状態では透明に*/
+            transform: translateY(128px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
         h2 {
           font-weight: bold;
           font-size: 20px;
