@@ -128,6 +128,21 @@ body {
           }
           100% {
             opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .sld-in-rdn {
+          animation: SlideInRigth 1s;
+        }
+
+        @keyframes SlideInRigth {
+          0% {
+            opacity: 1;/*初期状態では透明に*/
+            transform: translateX(220px);
+          }
+          100% {
+            opacity: 1;
             transform: translateX(0);
           }
         }

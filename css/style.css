@@ -128,13 +128,37 @@ body main .diary-contents .diary .sld-in {
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 @keyframes SlideIn {
   0% {
     opacity: 0; /*初期状態では透明に*/
     transform: translateY(128px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body main .diary-contents .diary .sld-in-rdn {
+  -webkit-animation: SlideInRigth 1s;
+          animation: SlideInRigth 1s;
+}
+@-webkit-keyframes SlideInRigth {
+  0% {
+    opacity: 1; /*初期状態では透明に*/
+    transform: translateX(220px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes SlideInRigth {
+  0% {
+    opacity: 1; /*初期状態では透明に*/
+    transform: translateX(220px);
   }
   100% {
     opacity: 1;
