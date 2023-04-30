@@ -31,11 +31,17 @@ body header .menu-header .contents p a {
     padding: 0 0 64px 64px;
   }
 }
-body header .diary-header p {
-  text-align: center;
-  padding: 16px 0;
+body header .diary-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
 }
-body header .diary-header p a {
+body header .diary-header p,
+body header .diary-header div {
+  cursor: pointer;
+}
+body header .diary-header p a,
+body header .diary-header div a {
   text-decoration: none;
   color: inherit;
 }

@@ -1,35 +1,50 @@
 'use strict';
 
-{ 
-  // 初回表示のインデックスは0番目
-  let disp_index = 0;
-  // いいね数
-  let gnum = 0;
-  let timeId;
+let disp_index = 0;     // 初回表示のインデックスは0番目
+let gnum = 0;           // いいね数
+let timeId;             // タイマID
+
+let charCnt = 0;
+let charLen;
+let charP;
+
+const diaryList = document.querySelector('.diary-list');
+const diary = document.querySelectorAll('.diary');
+const menuHeader = document.querySelector('.menu-header');
+const diaryHeader = document.querySelector('.diary-header');
+const gCounter = document.getElementById('g-cnt');
+
+// ---------------------------------------------------------------------
+// タイプライタ表示開始処理
+// ---------------------------------------------------------------------
+let tipeWriter = function () {
+  if (diary[disp_index].children[2].nodeName === 'P' &&
+    diary[disp_index].children[2].classList.contains('d-twr') === true) {
+    charLen = diary[disp_index].children[2].textContent.length;
+    charP = diary[disp_index].children[2].textContent;
+    diary[disp_index].children[2].textContent = '';
+    charCnt = 0;
+    setTimeout(charSlice, 100);
+  }
+}
+// ---------------------------------------------------------------------
+// タイプライタ表示処理
+// ---------------------------------------------------------------------
+let charSlice = function () {
+  if (charCnt >= charLen) {
+    return;
+  }
+  diary[disp_index].children[2].textContent += charP.slice(charCnt, 1 + charCnt);
+  charCnt++;
+  timeId = setTimeout(charSlice, 100);
+}
+
+{
   const good = document.getElementById('good');
   const bad = document.getElementById('bad');
-  const gCounter = document.getElementById('g-cnt');
   const bCounter = document.getElementById('b-cnt');
-  const diary = document.querySelectorAll('.diary');
-  const menuHeader = document.querySelector('.menu-header');
-  const diaryHeader = document.querySelector('.diary-header');
-  const diaryList = document.querySelector('.diary-list');
   const goodBad = document.querySelector('.good-bad');
-  const dayBtn = document.querySelector('.day-btn');
 
-  // ---------------------------------------------------------------------
-  // タイプライタ表示開始処理
-  // ---------------------------------------------------------------------
-  let tipeWriter = function(){
-    if (diary[disp_index].children[2].nodeName === 'P' && 
-        diary[disp_index].children[2].classList.contains('d-twr') === true) {
-      charLen = diary[disp_index].children[2].textContent.length;
-      charP = diary[disp_index].children[2].textContent;
-      diary[disp_index].children[2].textContent = '';
-      charCnt = 0;
-      setTimeout(charSlice, 100);
-    }
-  }
   // ---------------------------------------------------------------------
   // 日付ボタン押下処理
   // ---------------------------------------------------------------------
@@ -38,8 +53,8 @@
     // 押されたのがボタンの時
     if (e.target.nodeName === 'LI') {
       // 前回の日記がタイプライタのとき
-      if (diary[disp_index].children[2].nodeName === 'P' && 
-          diary[disp_index].children[2].classList.contains('d-twr') === true) {
+      if (diary[disp_index].children[2].nodeName === 'P' &&
+        diary[disp_index].children[2].classList.contains('d-twr') === true) {
         // 文字列を元に戻す
         diary[disp_index].children[2].textContent = charP;
         // タイマ停止
@@ -73,7 +88,7 @@
       // 日記画面をサーチ
       document.querySelectorAll('.diary').forEach((diaryNow, index) => {
         // 押されたボタンの日記画面なら
-          if (diaryNow.children[3].textContent === e.target.children[0].textContent) {
+        if (diaryNow.children[3].textContent === e.target.children[0].textContent) {
           // インデックスを保存
           disp_index = index;
           // 日記画面を表示する
@@ -121,30 +136,14 @@
     setTimeout(bcntRev, 100);
   });
 
-  let bcntRev = function(){
+  let bcntRev = function () {
     // よくないねカウント数表示
     bCounter.textContent = '0';
   };
-  
-// ---------------------------------------------------------------------
-// タイプライタ表示処理
-// ---------------------------------------------------------------------
-  let charCnt = 0;
-  let charLen = diary[disp_index].children[2].textContent.length;
-  let charP = diary[disp_index].children[2].textContent;
 
-  let charSlice = function(){
-    if (charCnt >= charLen) 
-    {
-      return; 
-    }
-    diary[disp_index].children[2].textContent += charP.slice(charCnt, 1 + charCnt);
-    charCnt++;
-    timeId = setTimeout(charSlice, 100);
-  };
-// ---------------------------------------------------------------------
-// レスポンシブ対応
-// ---------------------------------------------------------------------
+  // ---------------------------------------------------------------------
+  // レスポンシブ対応
+  // ---------------------------------------------------------------------
   // 画面幅800px以上のとき
   if (window.innerWidth >= 800) {
     // 先頭日記画面を表示する
@@ -159,14 +158,14 @@
     if (window.innerWidth >= 800) {
       // 直前が先頭画面ヘッダ表示中 かつ 日記画面非表示中のとき
       if (menuHeader.classList.contains('dnone') === false &&
-          diary[disp_index].classList.contains('dnone') === true) {
+        diary[disp_index].classList.contains('dnone') === true) {
         // 日記画面を表示する
-        diary[disp_index].classList.remove('dnone'); 
+        diary[disp_index].classList.remove('dnone');
         // いいね/よくないねを表示する
         goodBad.classList.remove('dnone');
         // タイプライタ表示
         tipeWriter();
-      // 日記画面ヘッダ表示中のとき
+        // 日記画面ヘッダ表示中のとき
       } else if (diaryHeader.classList.contains('dnone') === false) {
         // 日付メニューを表示する
         diaryList.classList.remove('dnone');
@@ -178,7 +177,7 @@
     } else {
       // 先頭画面ヘッダ表示中 かつ 日記画面表示中のとき
       if (menuHeader.classList.contains('dnone') === false &&
-          diary[disp_index].classList.contains('dnone') === false) {
+        diary[disp_index].classList.contains('dnone') === false) {
         // 日記画面を非表示にする
         diary[disp_index].classList.add('dnone');
         // いいねカウント数初期化
@@ -187,8 +186,8 @@
         // いいね/よくないねを非表示にする
         goodBad.classList.add('dnone');
         // 前回の日記がタイプライタのとき
-        if (diary[disp_index].children[2].nodeName === 'P' && 
-            diary[disp_index].children[2].classList.contains('d-twr') === true) {
+        if (diary[disp_index].children[2].nodeName === 'P' &&
+          diary[disp_index].children[2].classList.contains('d-twr') === true) {
           // 文字列を元に戻す
           diary[disp_index].children[2].textContent = charP;
           // タイマ停止
