@@ -11,7 +11,7 @@
     // 表示していた日記画面を非表示にする
     diary[disp_index].classList.add('dnone');
     // 日記初期化共通処理
-    dirryInit();
+    diaryInit();
     // インデックスを更新
     disp_index--;
     // カウントが日記数を超えたら一番古い日記とする
@@ -22,6 +22,8 @@
     diary[disp_index].classList.remove('dnone');
     // タイプライタ表示
     tipeWriter();
+    // いいね数をローカルストレージから取得し表示
+    goodbadInit();
   });
 
   // ---------------------------------------------------------------------
@@ -31,7 +33,7 @@
     // 表示していた日記画面を非表示にする
     diary[disp_index].classList.add('dnone');
     // 日記初期化共通処理
-    dirryInit();
+    diaryInit();
     // インデックスを更新
     disp_index++;
     // カウントが日記数を超えたら一番古い日記とする
@@ -42,7 +44,8 @@
     diary[disp_index].classList.remove('dnone');
     // タイプライタ表示
     tipeWriter();
-
+    // いいね数をローカルストレージから取得し表示
+    goodbadInit();
   });
 }
 

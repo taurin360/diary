@@ -1,8 +1,8 @@
 'use strict';
 
 let disp_index = 0;     // 初回表示のインデックスは0番目
-let gnum = 0;           // いいね数
 let timeId;             // タイマID
+let gnum = 0;           // いいね数
 
 let charCnt = 0;
 let charLen;
@@ -43,7 +43,7 @@ let charSlice = function () {
 // ---------------------------------------------------------------------
 // 日記初期化共通処理
 // ---------------------------------------------------------------------
-let dirryInit = function () {
+let diaryInit = function () {
   // 前回の日記がタイプライタのとき
   if (diary[disp_index].children[2].nodeName === 'P' &&
     diary[disp_index].children[2].classList.contains('d-twr') === true) {
@@ -59,9 +59,24 @@ let dirryInit = function () {
     video.pause();
     video.currentTime = 0;
   }
-  // いいね数初期化
-  gnum = 0;
-  gCounter.textContent = '0';
 }
+// ---------------------------------------------------------------------
+// いいね数初期化処理
+// ---------------------------------------------------------------------
+let goodbadInit = function () {
+  // ローカルストレージいいね数キー
+  let goodKey = 'good_' + diary[disp_index].children[3].textContent;
+  // いいね数をローカルストレージから取得する
+  if (localStorage.getItem(goodKey) === null) {
+    gnum = 0;
+  } else {
+    gnum = localStorage.getItem(goodKey);
+  }
+  // いいね数を表示する
+  gCounter.textContent = gnum;
+
+}
+
+
 
 

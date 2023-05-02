@@ -11,7 +11,7 @@
     // 押されたのがボタンの時
     if (e.target.nodeName === 'LI') {
       // 日記初期化共通処理
-      dirryInit();
+      diaryInit();
       // Window幅 800px以上
       if (window.innerWidth >= 800) {
         // 何もしない
@@ -24,9 +24,6 @@
         diaryHeader.classList.remove('dnone');
         // いいね/よくないねを表示する
         goodBad.classList.remove('dnone');
-        // // いいね数初期化
-        // gnum = 0;
-        // gCounter.textContent = '0';
       }
       // 日記画面をサーチ
       document.querySelectorAll('.diary').forEach((diaryNow, index) => {
@@ -38,6 +35,8 @@
           diary[disp_index].classList.remove('dnone');
           // タイプライタ表示
           tipeWriter();
+          // いいね数をローカルストレージから取得し表示
+          goodbadInit();
         }
         // 押されたボタンの日記画面以外
         else {
@@ -52,19 +51,21 @@
   // いいね/よくないねボタン押下処理
   // ---------------------------------------------------------------------
   // いいね/よくないね音声のインスタンス作成
-  let good_audio = new Audio("audio/good.mp3");
-  let bad_audio = new Audio("audio/bad.mp3");
+  let goodAudio = new Audio("audio/good.mp3");
+  let badAudio = new Audio("audio/bad.mp3");
 
   // いいねボタンのクリックを待ち受ける
   good.addEventListener('click', () => {
-    // いいね。カウントアップ
     gnum++;
     // いいね。カウント数表示
     gCounter.textContent = `${gnum}`;
+    // ローカルストレージにいいね数保存
+    let goodKey = 'good_' + diary[disp_index].children[3].textContent;
+    localStorage.setItem(goodKey, gnum);
     // いいね音声を頭から再生
-    bad_audio.pause();
-    good_audio.currentTime = 0;
-    good_audio.play();
+    badAudio.pause();
+    goodAudio.currentTime = 0;
+    goodAudio.play();
   });
 
   // よくないねボタンのクリックを待ち受ける
@@ -72,9 +73,9 @@
     // よくないねカウント数表示
     bCounter.textContent = '1';
     // よくないね音声を頭から再生
-    good_audio.pause();
-    bad_audio.currentTime = 0;
-    bad_audio.play();
+    goodAudio.pause();
+    badAudio.currentTime = 0;
+    badAudio.play();
     // 0.1秒後に0に戻す
     setTimeout(bcntRev, 100);
   });

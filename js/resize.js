@@ -11,6 +11,8 @@
     goodBad.classList.remove('dnone');
     // タイプライタ表示
     tipeWriter();
+    // いいね数をローカルストレージから取得し表示
+    goodbadInit();
   }
   // ウィンドウサイズ変更イベントを待ち受ける
   window.addEventListener('resize', resizeWindow);
@@ -29,7 +31,9 @@
         goodBad.classList.remove('dnone');
         // タイプライタ表示
         tipeWriter();
-        // スマホサイズで日記画面ヘッダ表示中のとき
+        // いいね数をローカルストレージから取得し表示
+        goodbadInit();
+        // スマホサイズで日記画面ヘッダ表示中からPCサイズに拡大されたとき
       } else if (diaryHeader.classList.contains('dnone') === false) {
         // 日付メニューを表示する
         diaryList.classList.remove('dnone');
@@ -47,7 +51,7 @@
         // いいね/よくないねを非表示にする
         goodBad.classList.add('dnone');
         // 日記初期化共通処理
-        dirryInit();
+        diaryInit();
       }
     }
   }
