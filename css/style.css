@@ -122,6 +122,7 @@ body main .diary-contents .diary p {
 body main .diary-contents .diary p {
   text-align: left;
   margin-bottom: 32px;
+  text-shadow: 2px 2px 6px gray;
 }
 body main .diary-contents .diary .sld-in {
   -webkit-animation: SlideIn 8s;
@@ -202,6 +203,10 @@ body main .good-bad .g-btn span,
 body main .good-bad .b-btn span {
   padding: 0 16px 0 16px;
   cursor: pointer;
+}
+body main .good-bad .g-btn span:active,
+body main .good-bad .b-btn span:active {
+  transform: translateY(3px);
 }
 @media (min-width: 800px) {
   body main .diary-all {
