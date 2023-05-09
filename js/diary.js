@@ -28,11 +28,11 @@
       // 日記画面をサーチ
       document.querySelectorAll('.diary').forEach((diaryNow, index) => {
         // 押されたリストが日記画面と一致したとき
-        if (diaryNow.children[3].textContent === e.target.children[0].textContent) {
+          if (diaryNow.id === e.target.dataset.id) {
           // インデックスを保存
           disp_index = index;
           // 日記画面を表示する
-          diary[disp_index].classList.remove('dnone');
+          diaryNow.classList.remove('dnone');
           // タイプライタ表示
           tipeWriter();
           // いいね数をローカルストレージから取得し表示
