@@ -65,7 +65,7 @@ let diaryInit = function () {
 // ---------------------------------------------------------------------
 let goodbadInit = function () {
   // ローカルストレージいいね数キー
-  let goodKey = 'good_' + diary[disp_index].children[3].textContent;
+  let goodKey = 'good_' + diary[disp_index].id;
   // いいね数をローカルストレージから取得する
   if (localStorage.getItem(goodKey) === null) {
     gnum = 0;

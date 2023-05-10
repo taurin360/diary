@@ -60,7 +60,7 @@
     // いいね。カウント数表示
     gCounter.textContent = `${gnum}`;
     // ローカルストレージにいいね数保存
-    let goodKey = 'good_' + diary[disp_index].children[3].textContent;
+    let goodKey = 'good_' + diary[disp_index].id;
     localStorage.setItem(goodKey, gnum);
     // いいね音声を頭から再生
     badAudio.pause();
