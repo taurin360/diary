@@ -137,12 +137,12 @@ body {
         }
 
         .sld-in-rdn {
-          animation: SlideInRigth 1s;
+          animation: SlideInRigth 8s;
         }
 
         @keyframes SlideInRigth {
           0% {
-            opacity: 1;/*初期状態では透明に*/
+            opacity: 1;
             transform: translateX(220px);
           }
           100% {
