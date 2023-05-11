@@ -62,7 +62,6 @@
     // ローカルストレージにいいね数保存
     let goodKey = 'good_' + diary[disp_index].id;
     localStorage.setItem(goodKey, gnum);
-    localStorage.setItem(goodKey, 0);
     // いいね音声を頭から再生
     badAudio.pause();
     goodAudio.currentTime = 0;
