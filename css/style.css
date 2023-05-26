@@ -149,8 +149,8 @@ body main .diary-contents .diary .sld-in {
   }
 }
 body main .diary-contents .diary .sld-in-rdn {
-  -webkit-animation: SlideInRigth 8s;
-          animation: SlideInRigth 8s;
+  -webkit-animation: SlideInRigth 0.51s;
+          animation: SlideInRigth 0.51s;
 }
 @-webkit-keyframes SlideInRigth {
   0% {
