@@ -115,14 +115,40 @@ body main .diary-contents .diary video {
   display: block;
 }
 body main .diary-contents .diary h2,
-body main .diary-contents .diary p {
+body main .diary-contents .diary p,
+body main .diary-contents .diary dt,
+body main .diary-contents .diary dd {
   padding: 16px 0;
   line-height: 2;
 }
-body main .diary-contents .diary p {
+body main .diary-contents .diary p,
+body main .diary-contents .diary dd {
   text-align: left;
   margin-bottom: 32px;
   text-shadow: 2px 2px 6px gray;
+}
+body main .diary-contents .diary dl div dt,
+body main .diary-contents .diary dl div dd {
+  width: 50%;
+  max-width: 264px;
+  min-width: 264px;
+  margin: 0 auto;
+}
+body main .diary-contents .diary dl div dt {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 0;
+  color: brown;
+}
+body main .diary-contents .diary dl div dd,
+body main .diary-contents .diary dl div img {
+  display: none;
+}
+body main .diary-contents .diary dl div.appear dd,
+body main .diary-contents .diary dl div.appear img {
+  display: block;
 }
 body main .diary-contents .diary .sld-in {
   -webkit-animation: SlideIn 8s;
@@ -149,8 +175,8 @@ body main .diary-contents .diary .sld-in {
   }
 }
 body main .diary-contents .diary .sld-in-rdn {
-  -webkit-animation: SlideInRigth 0.51s;
-          animation: SlideInRigth 0.51s;
+  -webkit-animation: SlideInRigth 0.5s;
+          animation: SlideInRigth 0.5s;
 }
 @-webkit-keyframes SlideInRigth {
   0% {

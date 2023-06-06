@@ -110,15 +110,46 @@ body {
         }
 
         h2,
-        p {
+        p,
+        dt,
+        dd {
           padding: 16px 0;
           line-height: 2;
         }
 
-        p {
+        p,
+        dd {
           text-align: left;
           margin-bottom: 32px;
           text-shadow: 2px 2px 6px gray;
+        }
+
+        dl {
+          div {
+            dt,
+            dd {
+              width: 50%;
+              max-width: 264px;
+              min-width: 264px;
+              margin: 0 auto;
+            }
+            dt {
+              cursor: pointer;
+              user-select: none;
+              padding: 0;
+              color: brown;
+            }
+            dd,
+            img {
+              display: none;
+            }
+          }
+          div.appear {
+            dd,
+            img {
+              display: block;
+            }
+          }
         }
 
         .sld-in {

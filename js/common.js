@@ -15,6 +15,7 @@ const diaryHeader = document.querySelector('.diary-header');
 const goodBad = document.querySelector('.good-bad');
 const gCounter = document.getElementById('g-cnt');
 const bCounter = document.getElementById('b-cnt');
+const dts = document.querySelectorAll('dt');
 
 // ---------------------------------------------------------------------
 // タイプライタ表示開始処理
@@ -76,6 +77,22 @@ let goodbadInit = function () {
   gCounter.textContent = gnum;
 
 }
+// ---------------------------------------------------------------------
+// アコーディオン表示処理
+// ---------------------------------------------------------------------
+dts.forEach(dt => {
+  dt.addEventListener('click', () => {
+    // 押下のたびに表示/非表示を繰り返す
+    dt.parentNode.classList.toggle('appear');
+
+    // 現在開いている文章以外は閉じてタイトルだけにする
+    dts.forEach(el => {
+      if (dt !== el) {
+        el.parentNode.classList.remove('appear');
+      }
+    });
+  });
+});
 
 
 
